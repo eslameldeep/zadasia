@@ -1,0 +1,15 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+
+Route::group(['prefix' => '{{ domain }}', 'as' => '{{ domain }}.', 'namespace' => '{{ domainCapitaliz }}\\Http\\Controllers'], function () {
+
+
+//keep this lines for generator 
+//__Routes_file
+
+
+
+});
+
+ 
