@@ -9,6 +9,7 @@ use App\Domain\Core\Services\RolesAndPermissions\Roles\ManagerRole;
 use App\Domain\Core\Services\RolesAndPermissions\Roles\ClientRole;
 
 use App\Domain\Core\Services\RolesAndPermissions\Roles\SuperAdminRole;
+use App\Domain\Core\Services\RolesAndPermissions\Roles\WorkerRole;
 use Illuminate\Database\Seeder;
 
 class RolesSeeder extends Seeder
@@ -19,6 +20,8 @@ class RolesSeeder extends Seeder
         SuperAdminRole::class,
         ManagerRole::class,
         ClientRole::class,
+        WorkerRole::class,
+
     ];
 
     protected array $permissions = [
@@ -32,7 +35,7 @@ class RolesSeeder extends Seeder
     }
 
     private function seedRoles()
-    {
+{
         foreach ($this->roles as $role) {
             (new $role())->execute();
         }

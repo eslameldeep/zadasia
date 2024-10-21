@@ -8,6 +8,7 @@ use Spatie\Enum\Enum;
  * @method static self super()
  * @method static self admin()
  * @method static self client()
+ * @method static self worker()
  **/
 class RolesEnum extends Enum
 {
@@ -17,6 +18,7 @@ class RolesEnum extends Enum
             'super' => 'Super Admin',
             'admin' => 'Admin',
             'client' => 'Client',
+            'worker' => 'worker'
         ];
     }
 }
