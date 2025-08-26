@@ -5,7 +5,7 @@
     <a class="nav-link" data-toggle="dropdown" href="#">
         {{ __($current_locale_object['name']) }}
     </a>
-    
+
       <ul>
       @foreach( $available_locale as $locale_key => $available_locale)
            <li> <a href="{{ LaravelLocalization::getLocalizedURL($locale_key, null, [], true) }}" class="dropdown-item {{ $locale_key === $current_locale ? "active" : "" }}">
@@ -14,7 +14,7 @@
             </li>
         @endforeach
     </ul>
-    
+
   </li>
 </ul>
 
