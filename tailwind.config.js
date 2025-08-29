@@ -6,7 +6,11 @@ export default {
         "./resources/**/*.vue",
     ],
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                sans: ["Janna LT", "ui-sans-serif", "system-ui"],
+            },
+        },
     },
     plugins: [],
 }

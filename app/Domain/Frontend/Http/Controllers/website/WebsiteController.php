@@ -3,6 +3,7 @@
 namespace App\Domain\Frontend\Http\Controllers\website;
 
 use App\Domain\Frontend\Models\Article;
+use App\Domain\Frontend\Models\Category;
 use App\Domain\Frontend\Models\Challenge;
 use App\Domain\Frontend\Models\Event;
 use App\Domain\Frontend\Models\Field;
@@ -16,7 +17,7 @@ class WebsiteController extends Controller
 {
     function Home() {
         SEOMeta::setTitle(trans('Home'));
-        
+
         return view('frontend.home', [
             'Fields' => Field::where('status' , true)->with('media')->orderBy('sort')->limit(4)->get(),
             'Products' => Product::where('status' , true)->with('media')->orderBy('sort')->get(),
@@ -24,6 +25,7 @@ class WebsiteController extends Controller
             'Partners' => Partner::where('status' , true)->with('media')->orderBy('sort')->get(),
             'Events' => Event::where('status' , true)->with('media')->orderBy('created_at' , 'DESC')->limit(6)->get(),
             'Articles' => Article::where('status' , true)->with('media')->orderBy('sort')->limit(2)->get(),
+            'Categories' => Category::where('status' , true)->with('media')->orderBy('sort')->get()
         ]);
     }
 
@@ -37,10 +39,10 @@ class WebsiteController extends Controller
         $Field = Field::where('slug', 'like' , "%$field_slug%" )
                     ->where('status' , true)
                     ->with(['FieldsFramework' => function ($query) {
-                        return $query->where('status' , true) -> with('media')->orderBy('sort') ; 
+                        return $query->where('status' , true) -> with('media')->orderBy('sort') ;
                     } , 'FieldsObjective' => function ($query) {
-                        return $query->where('status' , true) ->with('media')-> orderBy('sort') ; 
-                    }, 'media'])    
+                        return $query->where('status' , true) ->with('media')-> orderBy('sort') ;
+                    }, 'media'])
                     ->firstOrFail() ;
                 SEOMeta::setTitle(trans('Fields') . ' - ' . $Field->name);
         return view('frontend.field', [
@@ -60,10 +62,10 @@ class WebsiteController extends Controller
         $Product = Product::where('slug', 'like' , "%$product_slug%" )
                     ->where('status' , true)
                     ->with(['ProductsFeature' => function ($query) {
-                        return $query->where('status' , true)-> with('media') -> orderBy('sort') ; 
+                        return $query->where('status' , true)-> with('media') -> orderBy('sort') ;
                     } , 'ProductsSensor' => function ($query) {
-                        return $query->where('status' , true)->with('media') -> orderBy('sort') ; 
-                    } , 'media'])    
+                        return $query->where('status' , true)->with('media') -> orderBy('sort') ;
+                    } , 'media'])
                     ->firstOrFail() ;
                     SEOMeta::setTitle(trans('Products') . ' - ' .$Product->name);
         return view('frontend.product', [
@@ -75,7 +77,7 @@ class WebsiteController extends Controller
         SEOMeta::setTitle(trans('Software And Applications'));
         return view('frontend.software', [
             'Softwares' => Software::where('status' , true)->with('media')->orderBy('sort')->get(),
-        ]); 
+        ]);
     }
 
 
@@ -83,21 +85,21 @@ class WebsiteController extends Controller
         SEOMeta::setTitle(trans('Challenges Solved'));
         return view('frontend.challenges', [
             'Challenges' => Challenge::where('status' , true)->with('media')->orderBy('sort')->get(),
-        ]); 
+        ]);
     }
 
 
     function challenge($id) {
         $challenge = Challenge::where('id', $id )
         ->where('status' , true)
-        ->with(['media'])    
+        ->with(['media'])
         ->firstOrFail()  ;
         SEOMeta::setTitle(trans('Challenges Solved') . ' - ' . $challenge->title);
         return view('frontend.challenge', [
             'Challenge' =>  $challenge ,
             'Challenges' => Challenge::where([['status' , '=' ,true] , ['id' , '!=' , $challenge->id ]])->with('media')->orderBy('sort')->limit(3)->get(),
 
-        ]); 
+        ]);
     }
 
 }

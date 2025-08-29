@@ -5,9 +5,13 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'frontend', 'as' => 'frontend.', 'namespace' => 'Frontend\\Http\\Controllers'], function () {
 
 
-//keep this lines for generator 
+//keep this lines for generator
 //__Routes_file
 // Route::post('events/sort','EventController@updateOrder') ->name ('events.sort');
+
+    Route::post('categories/sort','CategoryController@updateOrder') ->name ('categories.sort');
+
+    Route::resource('categories', CategoryController::class);
 Route::resource('events', EventController::class);
 
 Route::post('articles/sort','ArticleController@updateOrder') ->name ('articles.sort');
@@ -48,4 +52,3 @@ Route::resource('partners', PartnerController::class);
 
 });
 
- 

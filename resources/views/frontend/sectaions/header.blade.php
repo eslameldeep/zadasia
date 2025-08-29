@@ -1,33 +1,34 @@
-<!-- 🌐 Top Nav -->
-<div class="bg-[#053A3C] text-white text-sm border-b border-white/20">
-    <div class="max-w-7xl mx-auto px-4 flex justify-between items-center py-2">
+<!-- Top Nav -->
+<div class=" text-white text-sm border-b border-white/20 relative z-50">
+    <div class="max-w-7xl mx-auto px-4 md:flex  justify-between items-center py-2">
 
         <!-- Left: F&Q | Privacy Policy | Lang Switch -->
-        <div class="flex items-center space-x-4 rtl:space-x-reverse">
-            <a href="{{ route('frontend.faq') }}" class="hover:text-teal-400">{{ __('F&Q') }}</a>
-            <a href="{{ route('frontend.privacy') }}" class="hover:text-teal-400">{{ __('Privacy Policy') }}</a>
+        <div class="flex items-center justify-between space-x-4  rtl:space-x-reverse my-3">
+            <a href="{{ route('frontend.faq') }}" class="hover:text-teal-100 text-sm text-teal-500">{{ __('F&Q') }}</a>
+            <a href="{{ route('frontend.privacy') }}" class="hover:text-teal-100 text-sm text-teal-500">{{ __('Privacy Policy') }}</a>
 
             <!-- Language Switch -->
             <a href="{{ LaravelLocalization::getLocalizedURL(app()->getLocale() === 'en' ? 'ar' : 'en', null, [], true) }}"
-               class="hover:text-teal-400 flex items-center gap-1">
+               class="hover:text-teal-100 text-teal-500 flex items-center gap-1">
                 <i class="fa-solid fa-globe"></i>
                 {{ app()->getLocale() === 'en' ? 'AR' : 'EN' }}
             </a>
         </div>
 
         <!-- Right: Socials -->
-        <div class="flex items-center space-x-3 rtl:space-x-reverse">
-            <a href="#" class="hover:text-teal-400"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#" class="hover:text-teal-400"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" class="hover:text-teal-400"><i class="fa-brands fa-snapchat"></i></a>
-            <a href="#" class="hover:text-teal-400"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="#" class="hover:text-teal-400"><i class="fa-brands fa-linkedin-in"></i></a>
+        <div class="flex items-center justify-between space-x-7 rtl:space-x-reverse ">
+
+            <a href="#" class="hover:text-teal-100 text-teal-300"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="hover:text-teal-100 text-teal-300"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="hover:text-teal-100 text-teal-300"><i class="fa-brands fa-snapchat"></i></a>
+            <a href="#" class="hover:text-teal-100 text-teal-300"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="hover:text-teal-100 text-teal-300"><i class="fa-brands fa-linkedin-in"></i></a>
         </div>
     </div>
 </div>
 
-<!-- 🏠 Main Nav -->
-<header class="bg-[#053A3C] text-white">
+<!-- Main Nav -->
+<header class="text-white relative z-50">
     <div class="max-w-7xl mx-auto px-4 flex items-center justify-between py-4">
 
         <!-- Logo -->
@@ -64,9 +65,10 @@
         <!-- Contact Us Button (Desktop) -->
         <div class="hidden lg:flex">
             <a href="{{ route('frontend.contact') }}"
-               class="px-5 py-2 rounded-full border border-white text-white hover:bg-teal-600 transition">
+               class="px-5 py-2 rounded-[25px] bg-teal-700 text-white transition hover:bg-teal-800">
                 {{ __('Contact Us') }}
             </a>
+
         </div>
 
         <!-- Mobile Hamburger -->

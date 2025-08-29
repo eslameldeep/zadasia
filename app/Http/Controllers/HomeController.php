@@ -49,24 +49,29 @@ class HomeController extends Controller
 
         $fetchVisitorsAndPageViews = Analytics::fetchVisitorsAndPageViews(Period::days(7), 10);
 
-        
 
         $fetchTotalVisitorsAndPageViews = Analytics::fetchTotalVisitorsAndPageViews(Period::days(7));
         $fetchTotalVisitorsAndPageViews = $fetchTotalVisitorsAndPageViews->map(function ($data) {
             $data['date'] = $data['date']->toDateTimeString();
             return $data;
         });
-        
-        
+
+
         $fetchTopCountries = Analytics::fetchTopCountries(Period::days(7), 10);
-        $fetchUserTypes = Analytics::fetchUserTypes(Period::days(7));
+        $fetchUserTypesCollection = Analytics::fetchUserTypes(Period::days(7));
 
 
-        
         $fetchUserTypes = [
-            "new" =>  $fetchUserTypes[0]["activeUsers"],
-            "returning" =>  $fetchUserTypes[1]["activeUsers"],
+            "new" => null ,
+            "returning" => null
         ];
+        if (count($fetchUserTypesCollection) > 0) {
+            $fetchUserTypes = [
+                "new" => $fetchUserTypesCollection[0]["activeUsers"],
+                "returning" => $fetchUserTypesCollection[1]["activeUsers"],
+            ];
+        }
+
         // $analyticsData = Analytics::fetchVisitors();
 
         return view('dashboard.home.sections.google-analytics-section', compact('fetchVisitorsAndPageViews', 'fetchTotalVisitorsAndPageViews', 'fetchTopCountries', 'fetchUserTypes'));

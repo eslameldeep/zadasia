@@ -1,7 +1,3 @@
-{{-- @php
-    // print_r(gd_info()) ;
-@endphp
-@dd() --}}
 @extends('adminlte::page')
 
 @section('title', 'Dashboard')
@@ -13,16 +9,6 @@
 @section('content')
 
 
-    {{-- <div class="row">
-        <div class="col-lg-3 col-md-6">
-            <x-dashboard.extra.card name="{{ __('Total visitors past 7 days') }}" class="bg-info"
-                value="{{ $fetchTotalVisitorsAndPageViews->sum('activeUsers') }}" icon="fas fa-globe" />
-        </div>
-        <div class="col-lg-3 col-md-6">
-            <x-dashboard.extra.card name="{{ __('Total visitors past 7 days') }}" chartName="TotalVisitorsPast7Days" />
-
-        </div>
-    </div> --}}
 
 
     <div class="row">

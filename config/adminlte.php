@@ -15,7 +15,7 @@ return [
      */
 
     'title' => '',
-    'title_prefix' => 'SpaceEcho| ',
+    'title_prefix' => 'ZadAsia| ',
     'title_postfix' => '',
 
     /*
@@ -63,12 +63,12 @@ return [
     |
      */
 
-    'logo' => '<b>SPACE</b> ECHO',
+    'logo' => '<b>Zad</b> Asia',
     'logo_img' => '/dashboard-assets/images/icon-c.svg',
     'logo_img_class' => 'brand-image img-circle elevation-3 ',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'SpaceEcho logo',
+    'logo_img_alt' => 'ZadAsia logo',
 
     /*
     |--------------------------------------------------------------------------
@@ -117,12 +117,12 @@ return [
         ],
     ],
 
-    /* 
-    Eslam 
+    /*
+    Eslam
     Dashboard
     */
 
-    'dashboard_url' => 'dashboard.home' , 
+    'dashboard_url' => 'dashboard.home' ,
     /*
     |--------------------------------------------------------------------------
     | User Menu

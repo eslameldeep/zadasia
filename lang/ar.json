@@ -82,26 +82,26 @@
     "Avatar" : "الصورة الرمزية",
     "Unread messages" : "رسائل غير مقروءة ",
     "All notifications" : "كل الإشعارات",
-    
-    
-    "roles and permission translate " : null , 
+
+
+    "roles and permission translate " : null ,
     "Roles and permissions": "الأدوار و الصلاحيات",
     "Permissions Count": "عدد الصلاحيات في الدور",
     "roles": "الادوار",
     "Users Count": "عدد المستخدمين",
-    "Create" : "انشاء" , 
-    "Delete" : "حذف" , 
-    "Read" : "عرض" , 
-    "Update" : "حذف" , 
-    "Administrator Access" : "كل الصلاحيات" , 
-    "Profile" : "البيانات الشخصية" , 
-    "Roles" : "الأدوار و الصلاحيات" , 
-    "Settings" : "الاعدادات" , 
-    "Select all" : "اختيار الكل" , 
-    "Role Name" : "اسم الدَّوْرُ" , 
-    "Enter " : "ادخل " , 
-    "Update roles" : "تعديل  " , 
-    
+    "Create" : "انشاء" ,
+    "Delete" : "حذف" ,
+    "Read" : "عرض" ,
+    "Update" : "حذف" ,
+    "Administrator Access" : "كل الصلاحيات" ,
+    "Profile" : "البيانات الشخصية" ,
+    "Roles" : "الأدوار و الصلاحيات" ,
+    "Settings" : "الاعدادات" ,
+    "Select all" : "اختيار الكل" ,
+    "Role Name" : "اسم الدَّوْرُ" ,
+    "Enter " : "ادخل " ,
+    "Update roles" : "تعديل  " ,
+
 
     "datatable translate ": null ,
     "profile": "حسابي",
@@ -115,25 +115,25 @@
     "loadingRecords": "جارٍ التحميل...",
     "Showing 0 to 0 of 0 entries": "من 0 إلى 0 من اصل 0 صف",
     "No matching records found": "لم تتطابق اي بيانات مع البحث",
-    "(filtered from _MAX_ total entries)": "(وُجد من اصل _MAX_ صف)" , 
+    "(filtered from _MAX_ total entries)": "(وُجد من اصل _MAX_ صف)" ,
 
     "dropzone translate ": null ,
-    "file_upload_limit" : "الحد الاقصى لرفع الملفات هو :max_files " , 
-    "Drop files here or click to upload" : "اسحب الملفات إلى هنا او اضغط لرفع الملفات" , 
-    "File is too big ). Max file size: :maxFileSizeMb  MB." : "الملف اكبر من المسموح , اقصى مساحة هي :maxFileSizeMb ميجابايت" , 
-    "Invalid file type. Only :types files are allowed." : "امتداد الملف غير مسموح به , مسموح فقط بـ :types" , 
-    "Your browser does not support drag & drop file uploads." : "المتصفح الخاص بك لا يدعم سحب الملفات للرفع" , 
+    "file_upload_limit" : "الحد الاقصى لرفع الملفات هو :max_files " ,
+    "Drop files here or click to upload" : "اسحب الملفات إلى هنا او اضغط لرفع الملفات" ,
+    "File is too big ). Max file size: :maxFileSizeMb  MB." : "الملف اكبر من المسموح , اقصى مساحة هي :maxFileSizeMb ميجابايت" ,
+    "Invalid file type. Only :types files are allowed." : "امتداد الملف غير مسموح به , مسموح فقط بـ :types" ,
+    "Your browser does not support drag & drop file uploads." : "المتصفح الخاص بك لا يدعم سحب الملفات للرفع" ,
     "Please use the fallback form below to upload your files." : "الرجاء استخدام النموذج الاحتياطي أدناه لتحميل ملفاتك" ,
 
     "arabic" : "العربية" ,
     "english" : "الانجليزية" ,
 
-    "sort": "ترتيب" ,	
-    "name": "الاسم" ,	
-    "status": "الحالة" ,	
-    "image": "الصورة" , 
-    "Title": "الاسم" , 
-    "Slogan": "slogan" , 
+    "sort": "ترتيب" ,
+    "name": "الاسم" ,
+    "status": "الحالة" ,
+    "image": "الصورة" ,
+    "Title": "الاسم" ,
+    "Slogan": "slogan" ,
     "Challenges" : "المشاريع السابقة",
     "Softwares" : "البرامج",
     "Frameworks" : "اطار العمل",
@@ -161,8 +161,8 @@
     "value" : "القيمة الحالية",
     "Attribute" : "المتغير",
     "Reading Type" : "نوع المتغير",
-    
-    
+
+
 
     "//frontend" : ""  ,
     "Challenges solved" : "المشاريع السابقة",
@@ -212,10 +212,10 @@
     "Harmonizing Technology with Nature's Symphony" : "مزامنة الطبيعة مع التكنولوجيا الحديثة ",
     "Home" : "الرئيسية ",
     "Website" : "الموقع" ,
-    "//frontend " : "", 
-    
-    
-    
+    "//frontend " : "",
+
+
+
     "//echocloud-start " : "",
     "Menu" : "القوائم",
     "Devices" : "الأجهزة",
@@ -224,10 +224,15 @@
     "New Password Confirmation" : "تأكيد كلمة السر الجديدة",
     "avatar" : "الصورة الشخصية",
 
-    "//echocloud-end " : "" 
+    "//echocloud-end " : "",
+
+    "F&Q" :  "الاسئلة الشائعة",
+    "Privacy Policy" : "سياسة الخصوصية",
+    "Our Categories" : "الاقسام لدينا",
+    "Multiple options" : "خيارات متعددة",
+    "To meet your needs" : "تلبي احتياجاتك"
 
 
 
-    
 
 }

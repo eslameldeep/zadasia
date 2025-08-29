@@ -1,25 +1,50 @@
 {
-  "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff": {
-    "file": "assets/bootstrap-icons-999550fa.woff",
-    "src": "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff"
+  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2": {
+    "file": "assets/fa-brands-400-a288b58f.woff2",
+    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2"
   },
-  "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2": {
-    "file": "assets/bootstrap-icons-cfe45b98.woff2",
-    "src": "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2"
+  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2": {
+    "file": "assets/fa-regular-400-3454c1d0.woff2",
+    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2"
+  },
+  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2": {
+    "file": "assets/fa-solid-900-2a84ae47.woff2",
+    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2"
+  },
+  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.woff2": {
+    "file": "assets/fa-v4compatibility-1e397e3f.woff2",
+    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.woff2"
+  },
+  "resources/frontend/css/app.css": {
+    "file": "assets/app-8bd3c77b.css",
+    "isEntry": true,
+    "src": "resources/frontend/css/app.css"
+  },
+  "resources/frontend/fonts/JannaLT/JannaLT-Bold.ttf": {
+    "file": "assets/JannaLT-Bold-9e04783e.ttf",
+    "src": "resources/frontend/fonts/JannaLT/JannaLT-Bold.ttf"
+  },
+  "resources/frontend/fonts/JannaLT/JannaLT-Regular.ttf": {
+    "file": "assets/JannaLT-Regular-2a23617a.ttf",
+    "src": "resources/frontend/fonts/JannaLT/JannaLT-Regular.ttf"
   },
   "resources/frontend/js/app.css": {
-    "file": "assets/app-7e2b8889.css",
+    "file": "assets/app-8635823d.css",
     "src": "resources/frontend/js/app.css"
   },
   "resources/frontend/js/app.js": {
     "assets": [
-      "assets/bootstrap-icons-cfe45b98.woff2",
-      "assets/bootstrap-icons-999550fa.woff"
+      "assets/fa-brands-400-a288b58f.woff2",
+      "assets/fa-regular-400-3454c1d0.woff2",
+      "assets/fa-solid-900-2a84ae47.woff2",
+      "assets/fa-v4compatibility-1e397e3f.woff2",
+      "assets/JannaLT-Regular-2a23617a.ttf",
+      "assets/JannaLT-Bold-9e04783e.ttf"
     ],
     "css": [
-      "assets/app-7e2b8889.css"
+      "assets/app-8635823d.css"
     ],
-    "file": "assets/app-948aea95.js",
+    "file": "assets/app-92de534b.js",
     "isEntry": true,
     "src": "resources/frontend/js/app.js"
   }

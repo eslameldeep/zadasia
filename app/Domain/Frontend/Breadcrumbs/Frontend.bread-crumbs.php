@@ -184,6 +184,17 @@ Breadcrumbs::for("dashboard.frontend.events.edit", function (BreadcrumbTrail $tr
 
 // end event section
 
+Breadcrumbs::for("dashboard.frontend.categories.index", function (BreadcrumbTrail $trail) { 
+    $trail->parent("dashboard");
+    $trail->push(__("categories") , route("dashboard.frontend.categories.index") ); 
+});
+Breadcrumbs::for("dashboard.frontend.categories.create", function (BreadcrumbTrail $trail) { 
+    $trail->parent("dashboard.frontend.categories.index");
+    $trail->push(__("Create")." ".__("categories") , "dashboard.frontend.categories.create"); 
+});
+Breadcrumbs::for("dashboard.frontend.categories.edit", function (BreadcrumbTrail $trail) { 
+    $trail->parent("dashboard.frontend.categories.index");
+    $trail->push(__("Update")." ".__("categories") , "dashboard.frontend.categories.edit"); 
+});
 //keep this lines for generator
 //__Breadcrumb_file
-

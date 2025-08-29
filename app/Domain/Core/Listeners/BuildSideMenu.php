@@ -20,7 +20,7 @@ class BuildSideMenu
     public function handle(EventsBuildingMenu $event): void
     {
 
-              
+
         $event->menu->add(['header' => __('Dashboard')]);
         $event->menu->add([
             'text' => __('Dashboard'),
@@ -63,9 +63,9 @@ class BuildSideMenu
             'can' => ['read_roles'],
         ]);
 
-       
 
-        
+
+
         $event->menu->add(['header' => __('Website'), 'can' => ['read_frontend']]);
         $event->menu->add([
             'text' => __('Website'),
@@ -113,6 +113,13 @@ class BuildSideMenu
                     'route' => 'dashboard.frontend.events.index',
                     'icon' => 'fas fa-fw fa-globe',
                     'can' => ['read_frontend'],
+                ],
+
+                [
+                    'text' => __('Categories'),
+                    'route' => 'dashboard.frontend.categories.index',
+                    'icon' => 'fas fa-fw fa-globe',
+                    'can' => ['read_categories'],
                 ],
             ],
         ]);

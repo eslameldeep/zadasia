@@ -2,6 +2,7 @@
 
 namespace App\Domain\Frontend\Http\Controllers;
 use App\Domain\Core\Http\Controllers\MainController;
+use App\Domain\Frontend\Models\Category;
 use App\Support\Dashboard\Crud\WithDatatable;
 use App\Support\Dashboard\Crud\WithDestroy;
 use App\Domain\Core\Enums\CorePermissions;
@@ -45,18 +46,18 @@ class ProductController extends MainController
             'specs.*' => 'required|string',
             'slug' => 'required|array',
             'slug.*' => 'required|slug',
-            
+
             'image' => [new MediaRule] ,
             'old_image' => ['nullable'] ,
             'background' => [new MediaRule] ,
-            'old_background' => ['nullable'] 
+            'old_background' => ['nullable']
         ];
     }
 
     protected function formData(?Model $model = null): array
     {
         return [
-
+            'categories' => Category::get(['id' , 'name'])->toArray()  ;
         ];
     }
 }

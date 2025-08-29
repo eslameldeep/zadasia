@@ -3,7 +3,7 @@
 @inject('layoutHelper', 'JeroenNoten\LaravelAdminLte\Helpers\LayoutHelper')
 
 @section('adminlte_css')
-<meta name="csrf-token" content="{{ csrf_token() }}">    
+<meta name="csrf-token" content="{{ csrf_token() }}">
 @stack('css')
     @yield('css')
     @stack('header')
@@ -19,9 +19,9 @@
     <div class="wrapper">
 
         {{-- Preloader Animation --}}
-        @if($layoutHelper->isPreloaderEnabled())
-            @include('adminlte::partials.common.preloader')
-        @endif
+{{--        @if($layoutHelper->isPreloaderEnabled())--}}
+{{--            @include('adminlte::partials.common.preloader')--}}
+{{--        @endif--}}
 
         {{-- Top Navbar --}}
         @if($layoutHelper->isLayoutTopnavEnabled())
@@ -59,5 +59,5 @@
     @stack('scripts')
     @stack('js')
     @yield('js')
-    
+
 @stop

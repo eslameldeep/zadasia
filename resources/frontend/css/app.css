@@ -1,3 +1,37 @@
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+
+
+@font-face {
+    font-family: "Janna LT";
+    src: url("../fonts/JannaLT/JannaLT-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Janna LT";
+    src: url("../fonts/JannaLT/JannaLT-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/*@import "./../../node_modules/fortawesome/fontawesome-free/css/all.min.css";*/
+/*@import './../../node_modules/bootstrap-icons/font/bootstrap-icons.min.css';*/
+/*@import "@fortawesome/fontawesome-free/css/all.min.css";*/
+
+
+/* your styles.css or resources/css/app.css */
+#category .swiper-slide-active {
+    @apply text-white;
+}
+
+#category .swiper-slide-active > .category-image {
+    @apply bg-white/10 border-[3px] border-[#126B65];
+}

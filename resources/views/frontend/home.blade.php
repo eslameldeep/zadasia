@@ -1,306 +1,228 @@
 <x-frontend-layout>
-    @push('header-title')
-        <div class="d-flex align-items-center text-center h-75 ">
-            <div class="w-100">
-                <h1 class="" style="font: normal normal 800 50px/135px Cairo; letter-spacing: 0px;">
-                    {{ __('We are the ECHO of nature’s Silence.') }}</h1>
-            </div>
-        </div>
-    @endpush
 
-    <!-- start Who we are section-->
-    <section class="container-fluid position-relative" id="how-we-are">
-
-
-        <div class="container">
-            <div class="row" style="min-height: 750px;">
-                <div class="col-md-5 offset-1 m-auto wow bounceInDown">
-                    <h6 class="section-slug">{{ __('Who we are ?') }}</h6>
-                    <h2 class="position-relative dot-after d-inline section-title ">
-                        {{ __('Empowering Sustainability Through Connected Solutions') }} </h2>
-                    <p style="color : #9faaae ; line-height: 3ch; margin-top: 20px;">
-                        {{ __('SpaceEcho is at the forefront of delivering cutting-edge loT solutions for water management, encompassing surface and subsurface monitoring, tide gauges, and air quality stations. With a focus on integration, their innovative systems enable comprehensive data collection and analysis to facilitate effective water resource management.') }}
-                    </p>
-                    {{-- <a class="gradient-button gradient-button-1 text-decoration-none py-0 fw-bold">Read More</a><br /> --}}
-
+    <section class="relative h-screen md:-mt-[133px] -mt-[153px] overflow-hidden">
+        <div class="swiper hero-swiper h-full">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide relative bg-cover bg-center"
+                     style="background-image: url('{{ asset('frontend-assets/images/hero-bg.png') }}');">
+                    <div class="absolute inset-0 bg-gradient-to-b from-[#071C1FE6] to-[#071C1FD9]"></div>
+                    <div class="relative flex flex-col items-center justify-center h-full text-center text-white px-4">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-6">Welcome to Our Website</h1>
+                        <p class="text-lg md:text-xl mb-8 max-w-2xl">
+                            Build modern, responsive, and elegant designs with Laravel + Tailwind.
+                        </p>
+                        <a href="#about"
+                           class="px-6 py-3 bg-teal-600 hover:bg-teal-700 rounded-full text-white transition">
+                            Get Started
+                        </a>
+                    </div>
                 </div>
-                <div class="col-md-6 who-are-we-img wow bounceInUp">
 
+                <!-- Slide 2 -->
+                <div class="swiper-slide relative bg-cover bg-center"
+                     style="background-image: url('{{ asset('frontend-assets/images/hero-bg.png') }}');">
+                    <div class="absolute inset-0 bg-gradient-to-b from-[#071C1FE6] to-[#071C1FD9]"></div>
+                    <div class="relative flex flex-col items-center justify-center h-full text-center text-white px-4">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-6">Fast Development</h1>
+                        <p class="text-lg md:text-xl mb-8 max-w-2xl">
+                            Accelerate your workflow with modern tools.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="swiper-slide relative bg-cover bg-center"
+                     style="background-image: url('{{ asset('frontend-assets/images/hero-bg.png') }}');">
+                    <div class="absolute inset-0 bg-gradient-to-b from-[#071C1FE6] to-[#071C1FD9]"></div>
+                    <div class="relative flex flex-col items-center justify-center h-full text-center text-white px-4">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-6">Responsive Design</h1>
+                        <p class="text-lg md:text-xl mb-8 max-w-2xl">
+                            Looks perfect on any screen size.
+                        </p>
+                    </div>
                 </div>
             </div>
-            <!-- <div class="how-we-are-bg">SPACE ECHO</div> -->
+
+            <div class="container relative">
+                <!-- Navigation -->
+                <div class="absolute bottom-10 end-8 flex items-end space-x-5 text-white z-20">
+                    <!-- Prev -->
+                    <button class="hero-prev text-[#81a5ac] leading-none mx-2"><img class="rtl:scale-x-[-1]"
+                                                                                    src="/frontend-assets/images/left-arrow.svg"
+                                                                                    height="8" width="50"
+                                                                                    alt="left-arrow"/></button>
+
+                    <!-- Next -->
+                    <button class="hero-next text-[#81a5ac] leading-none mx-2"><img class="rtl:scale-x-[-1]"
+                                                                                    src="/frontend-assets/images/right-arrow.svg"
+                                                                                    height="8" width="50"
+                                                                                    alt=left-arrow"/></button>
+
+                    <!-- Fraction Pagination -->
+                    <div class="hero-pagination "></div>
+                </div>
+            </div>
+
         </div>
     </section>
-    <!-- end Who we are section-->
-    @if ($Fields->count() > 0)
-        <!-- start section field -->
-        <section class="container pt-5 field" id="fe">
-            <div class="row wow bounceInUp">
-                <div class="col-md-10 ">
-                    <h6 class="section-slug ">{{ __('Our Fields.') }} </h6>
-                    <h2 class="position-relative dot-after d-inline section-title bolder fw-bold">
-                        {{ __('Check our fields') }}</h2>
-                </div>
-                <div class="col-md-2 d-flex align-items-center">
-                    <a  href="{{ route('frontend.fields') }}"
-                        class="gradient-button gradient-button-1 text-decoration-none py-0 fw-bold">{{ __('Show More') }}</a><br />
-                </div>
-            </div>
-            <div class="row">
-                @foreach ($Fields as $field)
-                    <!-- start fields item -->
-                    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12  p-2 item ">
-                        <div class="fields-list h-100 p-5">
-                            <div
-                                class="field-icon position-relative text-center d-flex align-items-center justify-content-center ">
-                                <img src="frontend-assets/images/gear.svg" class="img-fluid w-50" alt="">
-                            </div>
-                            <div class="h5 my-3 fw-bold">{{ $field->name }}</div>
-                            <div class="fs-5 my-3 fs-6 text-black-50">{{ $field->short_description }}</div>
-                            <a class="more-btn fw-bold text-decoration-none text-black"
-                                href="{{ route('frontend.fields.show', $field->slug) }}">{{ __('More') }} <span
-                                    class="dot-btn"><i
-                                        class="bi {{ LaravelLocalization::getCurrentLocaleDirection() == 'rtl' ? 'bi-arrow-left' : 'bi-arrow-right' }} d-inline icon"></i></span></a>
-                        </div>
+
+
+    <section class="py-32  relative">
+        <div>
+            <div class=" absolute bg-[url('frontend-assets/images/bg-icon.svg')] bg-no-repeat bg-right  -right-72 inset-0 "></div>
+            <div class=" absolute bg-[url('frontend-assets/images/bg-icon.svg')] bg-no-repeat bg-left-bottom -bottom-56 -left-56 inset-0 "></div>
+
+            <div class="max-w-7xl mx-auto px-4 py-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 items-center">
+
+                    <!-- First Column with Background Image -->
+                    <div
+                        class="w-full h-64 sm:h-96 md:h-[700px] rounded-[20px] bg-center bg-no-repeat bg-cover mix-blend-hue"
+                        style="background-image: url('{{ asset('frontend-assets/images/hero-bg.png') }}');">
                     </div>
-                    <!-- end fields item -->
-                @endforeach
 
+                    <!-- Second Column (content) -->
+                    <div class="flex items-center">
+                        <div>
+                            <h6 class="font-bold text-[18px] leading-[28px] sm:leading-[73px] capitalize text-[#126B65]">
+                                @lang("who are we")
+                            </h6>
 
-            </div>
-        </section>
-        <!-- end section field -->
-    @endif
+                            <p class="font-bold text-3xl sm:text-4xl md:text-4xl leading-snug sm:leading-normal capitalize text-teal-800 mt-4">
+                                @lang("Innovative manufacturing, unparalleled quality")
+                            </p>
 
-    @if ($Challenges->count())
+                            <p class="text-[18px] leading-[28px] text-[#4D686C] mt-4">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sapien velit, aliquet
+                                eget commodo nec, auctor a sapien. Nam eu neque vulputate diam rhoncus faucibus.
+                                Curabitur quis varius libero. Lorem.
+                            </p>
 
-
-        <!-- start Challenges Solved -->
-        <section class="container pt-5 " id="challenges-solved">
-            <div class="row wow bounceInUp">
-                <div class="col-md-10 ">
-                    <h6 class="section-slug">{{ __('Challenges solved') }}</h6>
-                    <h2 class="position-relative dot-after d-inline section-title"> {{ __('Challenges solved') }}</h2>
-                </div>
-                <div class="col-md-2 d-flex align-items-center">
-                    <a  href="{{ route('frontend.challenges') }}"
-                        class="gradient-button gradient-button-1 text-decoration-none py-0 fw-bold">{{ __('Show More') }}</a><br />
-                </div>
-            </div>
-            <div class="swiper challenges-solved-slider my-5">
-
-                <div class="swiper-wrapper">
-
-                    @foreach ($Challenges as $Challenge)
-                        <!-- Start swiper item for challenges -->
-                        <div class="swiper-slide position-relative d-block mb-2 li-card"
-                            style="background-image: url({{ $Challenge->getFirstMedia('image')?->getFullUrl('image-thumb') ? $Challenge->getFirstMedia('image')?->getFullUrl('image-thumb') : asset('/frontend-assets/images/87566b91c4.png')}});">
-                            <div class="position-absolute card text-white">
-                                <a href="{{route('frontend.challenges.show' , $Challenge->id )}}" class="d-flex justify-content-between text-area text-decoration-none text-white">
-                                    <div class="text-start ">
-                                        <div class="fw-bold fs-14">{{ $Challenge->title }}</div>
-                                        <div class="text-white-50 fs-12">{{ $Challenge->slogan }}</div>
-                                    </div>
-                                    <span class="dot-btn"><i class="bi bi-search d-inline icon"></i></span>
-                                </a>
-                            </div>
-                        </div>
-                        <!-- End swiper item for challenges -->
-                    @endforeach
-
-
-                </div>
-
-                <div class="swiper-pagination"></div>
-            </div>
-
-        </section>
-        <!-- end section Challenges Solved -->
-    @endif
-    @if ($Products->count())
-        <!-- start products -->
-        <section class="container pt-5" id="products">
-            <div class="row">
-                <div class="col-md-3 wow bounceInUp">
-                    <h6 class="section-slug">{{ __('Our Products.') }}</h6>
-                    <h2 class="position-relative dot-after d-inline section-title">{{ __('IoT Products') }}</h2>
-                    <div class="d-block my-3 fs-18 text-black-50 fw-normal">
-                        {{ __('Discover all our reliable and certified devices based on IoT technology and connect them to the cloud.') }}
-                    </div>
-                    <a href="{{route('frontend.products')}}"
-                        class="gradient-button gradient-button-1 text-decoration-none py-0 fw-bold">{{ __('Show More') }}</a><br />
-
-
-                </div>
-                <div class="col-md-9 position-relative">
-
-
-                    <div class="swiper products-slider  my-5">
-
-
-
-
-                        <div class="swiper-wrapper ">
-
-                            @foreach ($Products as $product)
-                                <!-- Start swiper item for challenges -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
+                                <!-- Card 1 -->
                                 <div
-                                    class="swiper-slide text-center position-relative p-2 bg-white text-black h-100 d-flex align-content-center flex-wrap justify-content-center">
-                                    <a class="fw-bold text-decoration-none text-black"
-                                        href="{{ route('frontend.products.show', $product->slug) }}">
-
-                                        <div class="d-block mx-auto w-100 product-img"
-                                            style="background-image: url({{ $product->getFirstMedia('image')?->getFullUrl('image-thumb') == null ? asset('frontend-assets/images/product.png') : $product->getFirstMedia('image')?->getFullUrl('image-thumb') }}); "></div>
-
-                                        <div class="d-block f-14 fw-bold product-name">{{ $product->name }}</div>
-                                    </a>
+                                    class="rounded-2xl border border-green-700 p-6 hover:border-gray-400 hover:bg-gray-200 transition">
+                                    <h3 class="font-bold text-lg mb-2">Vegin</h3>
+                                    <p class="text-gray-700">
+                                        aksndkjasn ajkndkjas n ajknsdkjasnd askjn dkan sd
+                                    </p>
                                 </div>
-                                <!-- End swiper item for challenges -->
-                            @endforeach
+
+                                <!-- Card 2 -->
+                                <div
+                                    class="rounded-2xl border border-green-700 p-6 hover:border-gray-400 hover:bg-gray-200 transition ">
+                                    <h3 class="font-bold text-lg mb-2">Vegin</h3>
+                                    <p class="text-gray-700">
+                                        aksndkjasn ajkndkjas n ajknsdkjasnd askjn dkan sd
+                                    </p>
+                                </div>
+                            </div>
 
                         </div>
-
-
                     </div>
-                    <div class="swiper-button-next"><i class="bi bi-arrow-right"></i></div>
-                    <div class="swiper-button-prev"><i class="bi bi-arrow-left"></i></div>
 
                 </div>
-
             </div>
-            </div>
-        </section>
-        <!-- end section product -->
-    @endif
+
+        </div>
+    </section>
 
 
-    @if ($Partners->count())
-        <!-- start partners -->
-        <section class="container pt-5 text-center" id="partners">
-            <h6 class="section-slug wow bounceInUp">{{ __('Partners') }}</h6>
-            <h1 class="position-relative dot-after d-inline section-title wow bounceInUp">{{ __('Our Partners') }}</h1>
-            <div class="swiper partners-slider my-5">
-
-                <div class="swiper-wrapper">
-
-                    @foreach ($Partners as $Partner)
-                        <!-- Start swiper item for partners -->
-                        <div class="swiper-slide">
-                            <img class="img-fluid" src="{{ $Partner->getFirstMediaUrl('image') }}" alt="{{ $Partner->name }}"
-                                srcset="">
-                        </div>
-                        <!-- End swiper item for partners -->
-                    @endforeach
+    <section id="category" class="py-32  bg-[#0b2f34] relative overflow-hidden ">
 
 
+
+        <div class="bg-[url('frontend-assets/images/bg-icon.svg')] bg-no-repeat bg-[135%_0%]">
+
+            <div class="max-w-7xl mx-auto px-4 py-4 space-y-5 z-10">
+                <div class="text-center text-lg text-teal-600 font-bold">@lang('Our Categories')</div>
+                <div class="text-center ">
+                    <span class="text-6xl text-teal-600 font-bold">@lang('Multiple options')</span>
+                    <span class="text-6xl text-white font-bold">@lang('To meet your needs')</span>
                 </div>
 
-                <div class="swiper-pagination"></div>
+                <div class="slider relative">
+                <div class="swiper categories-swiper relative">
+                    <div class="swiper-wrapper mt-20">
+                        @foreach($Categories as $category)
+                            <div class="swiper-slide flex flex-col items-center text-teal-600 hover:text-white">
+
+                                <!-- Card -->
+                                <div class=" category-image aspect-[1/1] w-full bg-[#0F3439] border border-[#126B6538] rounded-[20px]
+                    hover:bg-white/10 hover:border-[3px] hover:border-[#126B65]
+                    transition-all duration-300 bg-center bg-no-repeat bg-cover"
+                                     style="background-image: url('{{ $category->getFirstMediaUrl('image') }}');">
+                                </div>
+
+                                <!-- Title -->
+                                <div class="mt-3 text-center  text-2xl">
+                                    {{ $category->name }}
+                                </div>
+
+                            </div>
+                        @endforeach
+                    </div>
+
+                </div>
+                <!-- Prev Button -->
+                <button
+                    class="categories-prev absolute top-1/2 -translate-y-1/2 left-2 xl:-left-16  z-10
+                 flex items-center justify-center w-[50px] h-[50px] rounded-full
+               border border-[#126B65] bg-[#0F3439] text-[#81a5ac]
+               hover:bg-[#126B65] hover:text-white transition">
+                    <i class="fa-solid fa-arrow-left text-lg"></i>
+                </button>
+
+                <!-- Next Button -->
+                <button
+                    class="categories-next absolute top-1/2 -translate-y-1/2 right-2 xl:-right-16  z-10
+                 flex items-center justify-center w-[50px] h-[50px] rounded-full
+               border border-[#126B65] bg-[#0F3439] text-[#81a5ac]
+               hover:bg-[#126B65] hover:text-white transition">
+                    <i class="fa-solid fa-arrow-right text-lg"></i>
+                </button>
             </div>
 
-        </section>
-        <!-- end section partners -->
-    @endif
-
-    @if ($Articles->count() || $Events->count())
-
-        <section id="new-events" class="new-events container">
-            <div class="row">
-                @if ($Articles->count())
-
-                    <!-- start news -->
-                    <div class="col-lg-5 col-md-12">
-                        <div id="news" class="mb-5 wow bounceInUp">
-                            <h6 class="section-slug">{{ __('Articles') }} </h6>
-                            <h2 class="position-relative dot-after d-inline section-title fw-bold">{{ __('Articles') }}
-                            </h2>
-                        </div>
-
-                        <div class="news-card">
-
-                            @foreach ($Articles as $Article)
-                                <!-- Start news-item -->
-                                <div class="position-relative d-block w-100 mb-2 li-card"
-                                    style="background-image: url({{ $Article->getFirstMediaUrl('image') }});">
-                                    <div class="card text-white position-absolute">
-                                        <a href="{{route('frontend.articles.show' , $Article->slug )}}" class="d-flex justify-content-between text-area text-decoration-none text-white">
-                                            <div class="text-start">
-                                                <div class="fw-bold fs-14">{{ $Article->name }}</div>
-                                                <div class="text-white-50 fs-12">{{ $Article->sub_name }}</div>
-                                            </div>
-                                            <span class="dot-btn"><i class="bi bi-book-half d-inline icon"></i></span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <!-- End news-item -->
-                            @endforeach
-                        </div>
-                        <a href="{{route('frontend.articles')}}"
-                            class="gradient-button gradient-button-1 text-decoration-none py-0 fw-bold">{{ __('Show More') }}</a><br />
-                    </div>
-                    <!-- end news -->
-                @endif
-                @if ($Articles->count() && $Events->count())
-                    <div class="col-lg-2 d-flex justify-content-center">
-                        <div class="vertical-line"></div>
-                    </div>
-                @endif
-
-                @if ($Events->count())
-
-                    <!-- start events -->
-                    <div class="col-lg-5 col-md-12 d-flex flex-column">
-                        <div id="events" class="mb-5 wow bounceInUp">
-                            <h6 class="section-slug">{{ __('Events') }}</h6>
-                            <h2 class="position-relative dot-after d-inline section-title fw-bold">
-                                {{ __('Events') }}</h2>
-                        </div>
-
-                        <div class="events-card py-5 px-4 rounded-4  mb-2 flex-grow-1"
-                            style="background-color: #F1FAFD ;">
-
-                            @foreach ($Events as $index => $Event)
-                                <div class="artical-item w-100 bg-white py-3 px-4 rounded-2 p-1 fw-bolder mb-2">
-                                    <div class="expand" id="expand-{{$index}}">
-                                        <span class="mx-2 icon"><i class="bi bi-plus"></i> </span>
-                                        <span>{{ $Event->name }}</span>
-                                    </div>
-                                    <div class="collapse text-black-50" id="collapse-{{$index}}">
-                                        <hr />
-                                        {!! $Event->description!!}
-                                        ... <a href="{{route('frontend.events.show' , $Event->slug )}}" class="text-decoration-none" href="#">{{__('Read more')}}</a>
-                                    </div>
-
-                                </div>
-                            @endforeach
-
-
-                        </div>
-
-                        <a href="{{route('frontend.events')}}"
-                            class="gradient-button gradient-button-1 text-decoration-none py-0 fw-bold">{{ __('Show More') }}</a><br />
-
-                    </div>
-
-                    <!-- end events -->
-
-                @endif
             </div>
-        </section>
-    @endif
+        </div>
 
-    @push('css')
-        <style>
-            #header {
-                /* background-image: url(frontend-assets/images/gear.svg) !important ; */
-            }
+        <div
+            class="
+            absolute inset-0
+            bg-[url('/frontend-assets/images/bg-icon-shape.svg')] bg-no-repeat
+            bg-left
+            bg-[length:auto_100%]
 
-            @if (LaravelLocalization::getCurrentLocaleDirection() == 'rtl')
+        ">
+        </div>
+    </section>
 
-                #how-we-are::after {
-                    background-position: right center !important;
-                }
-            @endif
-        </style>
-    @endpush
+
+    {{--    <section--}}
+    {{--        class="relative bg-cover bg-center h-screen md:-mt-[133px] -mt-[153px] -z-10"--}}
+    {{--        style="background-image: url('frontend-assets/images/hero-bg.png');"--}}
+    {{--    >--}}
+    {{--        <!-- Dark Overlay -->--}}
+    {{--        <div class="absolute inset-0 bg-gradient-to-b from-[#071C1FE6] to-[#071C1FD9]"></div>--}}
+
+    {{--        <!-- Hero Content -->--}}
+    {{--        <div class="relative  flex flex-col items-center justify-center h-full text-center text-white px-4">--}}
+    {{--            <h1 class="text-5xl md:text-7xl font-bold mb-6">Welcome to Our Website</h1>--}}
+    {{--            <p class="text-lg md:text-xl mb-8 max-w-2xl">--}}
+    {{--                Build modern, responsive, and elegant designs with Laravel + Tailwind.--}}
+    {{--            </p>--}}
+    {{--            <a href="#about"--}}
+    {{--               class="px-6 py-3 bg-teal-600 hover:bg-teal-700 rounded-full text-white transition">--}}
+    {{--                Get Started--}}
+    {{--            </a>--}}
+
+
+    {{--        </div>--}}
+
+
+
+    {{--    </section>--}}
+
+
 </x-frontend-layout>

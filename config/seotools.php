@@ -9,9 +9,9 @@ return [
          * The default configurations to be used by the meta generator.
          */
         'defaults'       => [
-            'title'        => "SpaceEcho", // set false to total remove
+            'title'        => "zadasia", // set false to total remove
             'titleBefore'  => true, // Put defaults.title before page title, like 'It's Over 9000! - Dashboard'
-            'description'  => 'SpaceEcho is at the forefront of delivering cutting-edge loT solutions for water management, encompassing surface and subsurface monitoring, tide gauges, and air quality stations. With a focus on integration, their innovative systems enable comprehensive data collection and analysis to facilitate effective water resource management. ', // set false to total remove
+            'description'  => 'zadasia is at the forefront of delivering cutting-edge loT solutions for water management, encompassing surface and subsurface monitoring, tide gauges, and air quality stations. With a focus on integration, their innovative systems enable comprehensive data collection and analysis to facilitate effective water resource management. ', // set false to total remove
             'separator'    => ' - ',
             'keywords'     => [],
             'canonical'    => false, // Set to null or 'full' to use Url::full(), set to 'current' to use Url::current(), set false to total remove
@@ -36,8 +36,8 @@ return [
          * The default configurations to be used by the opengraph generator.
          */
         'defaults' => [
-            'title'       => 'SpaceEcho', // set false to total remove
-            'description' => 'SpaceEcho is at the forefront of delivering cutting-edge loT solutions for water management, encompassing surface and subsurface monitoring, tide gauges, and air quality stations. With a focus on integration, their innovative systems enable comprehensive data collection and analysis to facilitate effective water resource management. ', // set false to total remove
+            'title'       => 'zadasia', // set false to total remove
+            'description' => 'zadasia is at the forefront of delivering cutting-edge loT solutions for water management, encompassing surface and subsurface monitoring, tide gauges, and air quality stations. With a focus on integration, their innovative systems enable comprehensive data collection and analysis to facilitate effective water resource management. ', // set false to total remove
             'url'         => false, // Set null for using Url::current(), set false to total remove
             'type'        => false,
             'site_name'   => false,
@@ -58,8 +58,8 @@ return [
          * The default configurations to be used by the json-ld generator.
          */
         'defaults' => [
-            'title'       => 'SpaceEcho', // set false to total remove
-            'description' => 'SpaceEcho is at the forefront of delivering cutting-edge loT solutions for water management, encompassing surface and subsurface monitoring, tide gauges, and air quality stations. With a focus on integration, their innovative systems enable comprehensive data collection and analysis to facilitate effective water resource management. ', // set false to total remove
+            'title'       => 'zadasia', // set false to total remove
+            'description' => 'zadasia is at the forefront of delivering cutting-edge loT solutions for water management, encompassing surface and subsurface monitoring, tide gauges, and air quality stations. With a focus on integration, their innovative systems enable comprehensive data collection and analysis to facilitate effective water resource management. ', // set false to total remove
             'url'         => false, // Set to null or 'full' to use Url::full(), set to 'current' to use Url::current(), set false to total remove
             'type'        => 'WebPage',
             'images'      => [],
