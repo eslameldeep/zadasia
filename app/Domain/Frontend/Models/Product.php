@@ -22,30 +22,22 @@ class Product extends Model implements HasMedia
 
     protected $translatable = [
         'name',
-        'sub_name',
         'description',
         'short_description',
-        'specs',
         'slug',
     ];
 
     protected $casts = [
         'name' => 'json',
-        'sub_name' => 'json',
         'description' => 'json',
         'short_description' => 'json',
-        'specs' => 'json',
         'slug' => 'json',
         'status' => 'boolean',
     ];
 
-    public function ProductsFeature()
+    public function Category()
     {
-        return $this->hasMany(ProductsFeature::class);
-    }
-    public function ProductsSensor()
-    {
-        return $this->hasMany(ProductsSensor::class);
+        return $this->belongsTo(Category::class);
     }
 
 
@@ -53,13 +45,6 @@ class Product extends Model implements HasMedia
     {
         $this->addMediaConversion('image-thumb')
             ->performOnCollections('image')
-            ->format('webp')
-            ->optimize([Cwebp::class => [
-                '-q 75',
-            ]]);
-
-        $this->addMediaConversion('background-thumb')
-            ->performOnCollections('background')
             ->format('webp')
             ->optimize([Cwebp::class => [
                 '-q 75',

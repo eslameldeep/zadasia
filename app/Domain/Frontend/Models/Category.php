@@ -26,4 +26,7 @@ class Category extends Model implements HasMedia
         'status' => 'boolean',
     ];
 
+    public function Products() {
+        return $this->hasMany(Product::class);
+    }
 }

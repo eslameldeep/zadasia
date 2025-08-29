@@ -36,28 +36,23 @@ class ProductController extends MainController
         return [
             'name' => 'required|array',
             'name.*' => 'required|string',
-            'sub_name' => 'required|array',
-            'sub_name.*' => 'required|string',
             'description' => 'required|array',
             'description.*' => 'required|string',
             'short_description' => 'required|array',
             'short_description.*' => 'required|string',
-            'specs' => 'required|array',
-            'specs.*' => 'required|string',
+
             'slug' => 'required|array',
             'slug.*' => 'required|slug',
-
+            'category_id' => 'required|exists:categories,id',
             'image' => [new MediaRule] ,
             'old_image' => ['nullable'] ,
-            'background' => [new MediaRule] ,
-            'old_background' => ['nullable']
         ];
     }
 
     protected function formData(?Model $model = null): array
     {
         return [
-            'categories' => Category::get(['id' , 'name'])->toArray()  ;
+            'categories' => Category::pluck('name' , 'id')->toArray() ,
         ];
     }
 }
