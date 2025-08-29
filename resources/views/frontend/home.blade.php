@@ -199,6 +199,118 @@
     </section>
 
 
+
+    <section id="products" class="py-32 bg-white relative overflow-hidden">
+
+        <!-- Background -->
+        <div>
+            <div class="max-w-7xl mx-auto px-4 py-4 space-y-5 z-10 relative">
+
+                <!-- Headings -->
+                <div class="text-center text-lg text-teal-600 font-bold">
+                    @lang('New Arrived Products')
+                </div>
+                <div class="text-center">
+                    <span class="text-6xl  text-black font-bold">@lang('High Quality')</span>
+                    <span class="text-6xl text-teal-600 font-bold">@lang('For Every New')</span>
+                </div>
+
+                <!-- Slider -->
+                <div class="slider relative">
+                    <div class="swiper products-swiper relative">
+                        <div class="swiper-wrapper mt-20">
+                            @foreach($Products as $product)
+                                <div class="swiper-slide flex flex-col items-center text-teal-600 hover:text-black">
+
+                                    <!-- Card -->
+                                    <div class="product-image aspect-[1/1] w-full bg-gray-100 border border-[#126B6538] rounded-[20px]
+                                    hover:bg-white/10 hover:border-[3px] hover:border-[#126B65]
+                                    transition-all duration-300 bg-center bg-no-repeat bg-cover"
+                                         style="background-image: url('{{ $product->getFirstMediaUrl('image') }}');">
+                                    </div>
+
+                                    <!-- Title -->
+                                    <div class="mt-3 text-center text-2xl">
+                                        {{ $product->name }}
+                                    </div>
+
+                                    <!-- Price (Optional) -->
+                                    @if($product->price)
+                                        <div class="text-center text-lg text-gray-400 mt-1">
+                                            {{ $product->price }} $
+                                        </div>
+                                    @endif
+
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+
+                    <!-- Prev Button -->
+                    <!-- Prev Button -->
+                    <button
+                        class="products-prev absolute top-1/2 -translate-y-1/2 left-2 xl:-left-16 z-10
+    flex items-center justify-center w-[50px] h-[50px] rounded-full
+    border border-[#126B65] bg-white text-[#126B65]
+    hover:bg-[#126B65] hover:text-white transition">
+                        <i class="fa-solid fa-arrow-left text-lg"></i>
+                    </button>
+
+                    <!-- Next Button -->
+                    <button
+                        class="products-next absolute top-1/2 -translate-y-1/2 right-2 xl:-right-16 z-10
+    flex items-center justify-center w-[50px] h-[50px] rounded-full
+    border border-[#126B65] bg-white text-[#126B65]
+    hover:bg-[#126B65] hover:text-white transition">
+                        <i class="fa-solid fa-arrow-right text-lg"></i>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <section class="flex justify-center my-16">
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 items-center gap-10
+        w-full max-w-[1140px] min-h-[519px] rounded-[20px] py-10 px-6 md:px-28
+        bg-[radial-gradient(closest-side_at_50%_50%,#126B6500_0%,#126B6566_100%)]"
+        >
+            <div class="text-center md:text-start">
+                <h2 class="text-2xl md:text-3xl font-bold text-[#0F3439] mb-4">
+                    @lang('We meet all your export needs')
+                </h2>
+                <p class="text-[#0F3439]/80 mb-6 leading-relaxed">
+                    @lang('There is a long-established fact that a reader will be distracted
+                    by the readable content of a page when looking at its layout.')
+                </p>
+                <button
+                    class="px-6 py-2 rounded-full bg-[#126B65] text-white font-medium hover:bg-[#0F3439] transition"
+                >
+                    @lang('More')
+                </button>
+            </div>
+
+            <div class="flex justify-center">
+                <img
+                    src="{{ asset('frontend-assets/images/export.png') }}"
+                    alt="@lang('Export Box')"
+                    class="max-w-full h-auto"
+                >
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
     {{--    <section--}}
     {{--        class="relative bg-cover bg-center h-screen md:-mt-[133px] -mt-[153px] -z-10"--}}
     {{--        style="background-image: url('frontend-assets/images/hero-bg.png');"--}}

@@ -20,7 +20,7 @@ class WebsiteController extends Controller
 
         return view('frontend.home', [
             'Fields' => Field::where('status' , true)->with('media')->orderBy('sort')->limit(4)->get(),
-            'Products' => Product::where('status' , true)->with('media')->orderBy('sort')->get(),
+            'Products' => Product::where('status' , true)->with(['media' , 'Category'])->orderBy('sort')->limit(10)->get(),
             'Challenges' => Challenge::where('status' , true)->with('media')->orderBy('sort')->get(),
             'Partners' => Partner::where('status' , true)->with('media')->orderBy('sort')->get(),
             'Events' => Event::where('status' , true)->with('media')->orderBy('created_at' , 'DESC')->limit(6)->get(),

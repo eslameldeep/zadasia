@@ -67,3 +67,34 @@ const categoriesSwiper = new Swiper(".categories-swiper", {
 });
 
 
+
+
+
+
+const productsSwiper = new Swiper(".products-swiper", {
+    modules: [Autoplay, Navigation],
+    slidesPerView: 1,
+    spaceBetween: 10,
+    centeredSlides: true,
+    autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: false,
+        stopOnLastSlide: false,
+        waitForTransition: true
+
+    },
+    loop: false,
+    navigation: {
+        nextEl: '.products-next',
+        prevEl: '.products-prev',
+    },
+    breakpoints: {
+        640: { slidesPerView: 2, spaceBetween: 30 },
+        768: { slidesPerView: 2, spaceBetween: 30 },
+        1024: { slidesPerView: 3, spaceBetween: 30 },
+        1280: { slidesPerView: 3, spaceBetween: 30 },
+        1536: { slidesPerView: 4, spaceBetween: 30 },
+    },
+});
+

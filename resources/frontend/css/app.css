@@ -35,3 +35,12 @@
 #category .swiper-slide-active > .category-image {
     @apply bg-white/10 border-[3px] border-[#126B65];
 }
+
+
+#products .swiper-slide-active {
+    @apply text-teal-600;
+}
+
+#products .swiper-slide-active > .product-image {
+    @apply bg-white/10 border-[3px] border-[#126B65];
+}
