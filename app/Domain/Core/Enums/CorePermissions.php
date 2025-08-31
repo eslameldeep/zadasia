@@ -6,6 +6,7 @@ use App\Domain\Core\Services\RolesAndPermissions\PermissionEnum;
 
 /**
  * @method static self users()
+* @method static self reviews()
 * @method static self categories()
  * @method static self roles()
  * @method static self profile()

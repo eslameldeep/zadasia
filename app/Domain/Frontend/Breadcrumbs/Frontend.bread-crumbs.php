@@ -196,5 +196,17 @@ Breadcrumbs::for("dashboard.frontend.categories.edit", function (BreadcrumbTrail
     $trail->parent("dashboard.frontend.categories.index");
     $trail->push(__("Update")." ".__("categories") , "dashboard.frontend.categories.edit"); 
 });
+Breadcrumbs::for("dashboard.frontend.reviews.index", function (BreadcrumbTrail $trail) { 
+    $trail->parent("dashboard");
+    $trail->push(__("reviews") , route("dashboard.frontend.reviews.index") ); 
+});
+Breadcrumbs::for("dashboard.frontend.reviews.create", function (BreadcrumbTrail $trail) { 
+    $trail->parent("dashboard.frontend.reviews.index");
+    $trail->push(__("Create")." ".__("reviews") , "dashboard.frontend.reviews.create"); 
+});
+Breadcrumbs::for("dashboard.frontend.reviews.edit", function (BreadcrumbTrail $trail) { 
+    $trail->parent("dashboard.frontend.reviews.index");
+    $trail->push(__("Update")." ".__("reviews") , "dashboard.frontend.reviews.edit"); 
+});
 //keep this lines for generator
 //__Breadcrumb_file

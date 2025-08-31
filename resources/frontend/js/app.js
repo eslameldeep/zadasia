@@ -1,10 +1,12 @@
 import "@fortawesome/fontawesome-free/css/all.min.css"
 import '../css/app.css';
+import 'odometer/themes/odometer-theme-default.css';
 
 
 import Swiper from 'swiper';
 
 import { Navigation, Pagination ,Autoplay } from 'swiper/modules';
+import Odometer from 'odometer';
 
 const heroSwiper = new Swiper('.hero-swiper', {
     modules: [Navigation, Pagination],
@@ -98,3 +100,62 @@ const productsSwiper = new Swiper(".products-swiper", {
     },
 });
 
+const reviewswiper = new Swiper(".reviews-swiper", {
+    modules: [Autoplay, Pagination],
+    slidesPerView: 1,
+    spaceBetween: 10,
+    centeredSlides: true,
+    pagination: {
+        el: '.swiper-pagination-custom',
+        clickable: true,
+    },
+    autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: false,
+        stopOnLastSlide: false,
+        waitForTransition: true
+    },
+    loop: false,
+    breakpoints: {
+        640: { slidesPerView: 1, spaceBetween: 30 },
+        768: { slidesPerView: 1, spaceBetween: 30 },
+        1024: { slidesPerView: 2, spaceBetween: 30 },
+        1280: { slidesPerView: 2, spaceBetween: 30 },
+        1536: { slidesPerView: 3, spaceBetween: 30 },
+    },
+});
+
+
+document.querySelectorAll('[id^="odometer"]').forEach(el => {
+    const finalValue = el.getAttribute('data-value') || 0;
+
+    // create new odometer
+    const odo = new Odometer({
+        el: el,
+        value: 0,
+        format: '(,ddd)',
+    });
+
+    // animate to backend value
+    setTimeout(() => {
+        odo.update(finalValue);
+    }, 500);
+});
+
+const aboutReviews = new Swiper("#about-reviews", {
+    direction: "vertical" ,
+    slidesPerView: "auto" ,
+    spaceBetween: 20, // adds spacing between slides
+    autoHeight: true, // fixes overlap for dynamic height slides    slidesPerView: 2,
+    mousewheel: true,
+    freeMode: true,
+    autoplay: {
+        delay: 500,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: false,
+        stopOnLastSlide: false,
+        waitForTransition: true
+    },
+    loop: false,
+});

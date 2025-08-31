@@ -11,7 +11,9 @@ Route::group([
     'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ],
     'namespace' => 'App\Domain\Frontend\Http\Controllers\website', 'as' => 'frontend.'], function () {
 
-    Route::get('/', 'WebsiteController@Home')->name('home');
+    Route::get('/', 'WebsiteController@Home')->name('home'); //ok
+
+
 
     Route::get('/fields', 'WebsiteController@Fields')->name('fields');
     Route::get('/field/{field_slug}', 'WebsiteController@Field')->name('fields.show');
@@ -32,7 +34,10 @@ Route::group([
 
 
     Route::get('/', 'WebsiteController@home')->name('home');
-    Route::get('/about', 'WebsiteController@about')->name('about');
+    Route::get('/about', 'WebsiteController@about')->name('about'); //ok
+    Route::get('/export-request', 'WebsiteController@ExportRequests')->name('export'); //ok
+    Route::get('/contact', 'WebsiteController@Contact')->name('contact'); //ok
+
     Route::get('/products', 'WebsiteController@products')->name('products');
 
     Route::get('/news', 'WebsiteController@news')->name('news');
@@ -40,7 +45,6 @@ Route::group([
     Route::get('/catalog', 'WebsiteController@catalog')->name('catalog');
     Route::get('/faq', 'WebsiteController@faq')->name('faq');
     Route::get('/privacy-policy', 'WebsiteController@privacyPolicy')->name('privacy');
-    Route::get('/contact', 'WebsiteController@contact')->name('contact');
 
 
     Route::get('/contact-us', function(){

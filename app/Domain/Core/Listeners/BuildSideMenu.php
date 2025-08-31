@@ -121,6 +121,12 @@ class BuildSideMenu
                     'icon' => 'fas fa-fw fa-globe',
                     'can' => ['read_categories'],
                 ],
+                [
+                    'text' => __('Reviews'),
+                    'route' => 'dashboard.frontend.reviews.index',
+                    'icon' => 'fas fa-fw fa-globe',
+                    'can' => ['read_reviews'],
+                ],
             ],
         ]);
 

@@ -8,6 +8,8 @@ Route::group(['prefix' => 'frontend', 'as' => 'frontend.', 'namespace' => 'Front
 //keep this lines for generator
 //__Routes_file
 // Route::post('events/sort','EventController@updateOrder') ->name ('events.sort');
+    Route::post('reviews/sort','ReviewsController@updateOrder') ->name ('reviews.sort');
+    Route::resource('reviews', ReviewController::class);
 
     Route::post('categories/sort','CategoryController@updateOrder') ->name ('categories.sort');
 
@@ -51,4 +53,3 @@ Route::resource('partners', PartnerController::class);
 
 
 });
-

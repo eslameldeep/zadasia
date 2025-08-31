@@ -9,6 +9,7 @@ use App\Domain\Frontend\Models\Event;
 use App\Domain\Frontend\Models\Field;
 use App\Domain\Frontend\Models\Partner;
 use App\Domain\Frontend\Models\Product;
+use App\Domain\Frontend\Models\Review;
 use App\Domain\Frontend\Models\Software;
 use App\Http\Controllers\Controller;
 use Artesaos\SEOTools\Facades\SEOMeta;
@@ -19,14 +20,32 @@ class WebsiteController extends Controller
         SEOMeta::setTitle(trans('Home'));
 
         return view('frontend.home', [
-            'Fields' => Field::where('status' , true)->with('media')->orderBy('sort')->limit(4)->get(),
             'Products' => Product::where('status' , true)->with(['media' , 'Category'])->orderBy('sort')->limit(10)->get(),
-            'Challenges' => Challenge::where('status' , true)->with('media')->orderBy('sort')->get(),
-            'Partners' => Partner::where('status' , true)->with('media')->orderBy('sort')->get(),
-            'Events' => Event::where('status' , true)->with('media')->orderBy('created_at' , 'DESC')->limit(6)->get(),
             'Articles' => Article::where('status' , true)->with('media')->orderBy('sort')->limit(2)->get(),
-            'Categories' => Category::where('status' , true)->with('media')->orderBy('sort')->get()
+            'Categories' => Category::where('status' , true)->with('media')->orderBy('sort')->get() ,
+            'Reviews' => Review::where('status' , true)->with('media')->orderBy('sort')->limit(10)->get()
         ]);
+    }
+
+    function About()
+    {
+        SEOMeta::setTitle(trans('About Us'));
+        return view('frontend.about', [
+            'Reviews' => Review::where('status' , true)->with('media')->orderBy('sort')->limit(10)->get()
+        ]);
+
+    }
+
+    function Contact()
+    {
+        SEOMeta::setTitle(trans('About Us'));
+        return view('frontend.contact-us') ;
+    }
+    function ExportRequests()
+    {
+        SEOMeta::setTitle(trans('Export Requests'));
+        return view('frontend.export');
+
     }
 
     function Fields() {
