@@ -157,7 +157,9 @@
                 <!-- Stat Item -->
                 <div class="flex flex-col items-center justify-center">
                     <div
-                        class="w-40 sm:w-48 md:w-56 lg:w-64 aspect-square border border-dashed border-[#126B65] rounded-full flex flex-col items-center justify-center">
+                        class="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64
+               border border-dashed border-[#126B65] rounded-full
+               flex flex-col items-center justify-center">
                         <div class="text-2xl sm:text-3xl font-bold text-white">
                             <span id="odometer1" data-value="1000">0</span>
                         </div>
@@ -165,10 +167,12 @@
                     </div>
                 </div>
 
-                <!-- Repeat for other items -->
+                <!-- Stat Item -->
                 <div class="flex flex-col items-center justify-center">
                     <div
-                        class="w-40 sm:w-48 md:w-56 lg:w-64 aspect-square border border-dashed border-[#126B65] rounded-full flex flex-col items-center justify-center">
+                        class="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64
+               border border-dashed border-[#126B65] rounded-full
+               flex flex-col items-center justify-center">
                         <div class="text-2xl sm:text-3xl font-bold text-white">
                             <span id="odometer2" data-value="2000">0</span>
                         </div>
@@ -176,9 +180,12 @@
                     </div>
                 </div>
 
+                <!-- Stat Item -->
                 <div class="flex flex-col items-center justify-center">
                     <div
-                        class="w-40 sm:w-48 md:w-56 lg:w-64 aspect-square border border-dashed border-[#126B65] rounded-full flex flex-col items-center justify-center">
+                        class="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64
+               border border-dashed border-[#126B65] rounded-full
+               flex flex-col items-center justify-center">
                         <div class="text-2xl sm:text-3xl font-bold text-white">
                             <span id="odometer3" data-value="3000">0</span>
                         </div>
@@ -186,15 +193,19 @@
                     </div>
                 </div>
 
+                <!-- Stat Item -->
                 <div class="flex flex-col items-center justify-center">
                     <div
-                        class="w-40 sm:w-48 md:w-56 lg:w-64 aspect-square border border-dashed border-[#126B65] rounded-full flex flex-col items-center justify-center">
+                        class="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64
+               border border-dashed border-[#126B65] rounded-full
+               flex flex-col items-center justify-center">
                         <div class="text-2xl sm:text-3xl font-bold text-white">
                             <span id="odometer4" data-value="4000">0</span>
                         </div>
                         <p class="text-[#9BB0B3] mt-2 text-sm sm:text-base">@lang('Test Title')</p>
                     </div>
                 </div>
+
 
             </div>
         </div>

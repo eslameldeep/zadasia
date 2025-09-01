@@ -16,7 +16,7 @@
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.woff2"
   },
   "resources/frontend/css/app.css": {
-    "file": "assets/app-8bd3c77b.css",
+    "file": "assets/app-4ee7dd53.css",
     "isEntry": true,
     "src": "resources/frontend/css/app.css"
   },
@@ -29,7 +29,7 @@
     "src": "resources/frontend/fonts/JannaLT/JannaLT-Regular.ttf"
   },
   "resources/frontend/js/app.css": {
-    "file": "assets/app-8635823d.css",
+    "file": "assets/app-6650d6a7.css",
     "src": "resources/frontend/js/app.css"
   },
   "resources/frontend/js/app.js": {
@@ -42,9 +42,9 @@
       "assets/JannaLT-Bold-9e04783e.ttf"
     ],
     "css": [
-      "assets/app-8635823d.css"
+      "assets/app-6650d6a7.css"
     ],
-    "file": "assets/app-92de534b.js",
+    "file": "assets/app-b1ab0cce.js",
     "isEntry": true,
     "src": "resources/frontend/js/app.js"
   }

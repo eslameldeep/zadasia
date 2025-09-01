@@ -5,9 +5,9 @@ import 'odometer/themes/odometer-theme-default.css';
 
 import Swiper from 'swiper';
 
-import { Navigation, Pagination ,Autoplay } from 'swiper/modules';
+import { Navigation, Pagination ,Autoplay , Thumbs, FreeMode } from 'swiper/modules';
 import Odometer from 'odometer';
-
+Swiper.use([Navigation, Thumbs, FreeMode]);
 const heroSwiper = new Swiper('.hero-swiper', {
     modules: [Navigation, Pagination],
     loop: true,
@@ -158,4 +158,38 @@ const aboutReviews = new Swiper("#about-reviews", {
         waitForTransition: true
     },
     loop: false,
+});
+
+
+
+
+// Thumbs (do NOT loop)
+const thumbsSwiper = new Swiper('.product-slider', {
+
+    loop: false,                // IMPORTANT: no loop for thumbs
+    spaceBetween: 10,
+    slidesPerView: 4,
+    freeMode: true,
+    watchSlidesProgress: true,
+    watchSlidesVisibility: true,
+    breakpoints: {
+        640: { slidesPerView: 4 },
+        768: { slidesPerView: 5 },
+        1024: { slidesPerView: 6 }
+    }
+});
+
+// Main gallery
+const gallerySwiper = new Swiper('.product-gallery-slider', {
+    loop: true,                 // main can loop
+    spaceBetween: 10,
+    navigation: {
+        nextEl: '.product-gallery-next',
+        prevEl: '.product-gallery-prev',
+    },
+    thumbs: {
+        swiper: thumbsSwiper,     // link thumbs
+    },
+    // optional: enable keyboard/mousewheel as you want
+    keyboard: { enabled: true },
 });

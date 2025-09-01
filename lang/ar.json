@@ -248,5 +248,8 @@
     "Address" : "العنوان" ,
     "Email Address" : "البريد الإلكتروني",
     "We are present  " :  "متواجدون",
-    "wherever you are." : "اينما كنت    "
+    "wherever you are." : "اينما كنت    ",
+    "Export Requests" : "طلبات التصدير",
+    "Catalog" : "كتالوج المنتجات",
+    "Terms & Conditions"  : "الشروط و الاحكام"
 }

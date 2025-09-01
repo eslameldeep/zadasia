@@ -9,7 +9,7 @@ return [
          * The default configurations to be used by the meta generator.
          */
         'defaults'       => [
-            'title'        => "zadasia", // set false to total remove
+            'title'        => "مصنع زادآسيا", // set false to total remove
             'titleBefore'  => true, // Put defaults.title before page title, like 'It's Over 9000! - Dashboard'
             'description'  => 'zadasia is at the forefront of delivering cutting-edge loT solutions for water management, encompassing surface and subsurface monitoring, tide gauges, and air quality stations. With a focus on integration, their innovative systems enable comprehensive data collection and analysis to facilitate effective water resource management. ', // set false to total remove
             'separator'    => ' - ',

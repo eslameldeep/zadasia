@@ -42,23 +42,27 @@
         <nav class="hidden lg:flex space-x-6 rtl:space-x-reverse text-base">
             <a href="{{ route('frontend.home') }}"
                class="{{ Route::is('frontend.home') ? 'font-bold text-white' : 'text-white/70 hover:text-white' }}">
-                {{ __('Home Page') }}
+                {{ __('Home') }}
             </a>
-            <a href="{{ route('frontend.fields') }}"
-               class="{{ Route::is('frontend.fields') ? 'font-bold text-white' : 'text-white/70 hover:text-white' }}">
-                {{ __('Fields') }}
+            <a href="{{ route('frontend.about') }}"
+               class="{{ Route::is('frontend.about') ? 'font-bold text-white' : 'text-white/70 hover:text-white' }}">
+                {{ __('About Us') }}
             </a>
             <a href="{{ route('frontend.products') }}"
                class="{{ Route::is('frontend.products') ? 'font-bold text-white' : 'text-white/70 hover:text-white' }}">
                 {{ __('Products') }}
             </a>
-            <a href="{{ route('frontend.software') }}"
-               class="{{ Route::is('frontend.software') ? 'font-bold text-white' : 'text-white/70 hover:text-white' }}">
-                {{ __('Software And Applications') }}
+            <a href="{{ route('frontend.news') }}"
+               class="{{ Route::is('frontend.news') ? 'font-bold text-white' : 'text-white/70 hover:text-white' }}">
+                {{ __('News') }}
             </a>
-            <a href="{{ route('frontend.challenges') }}"
-               class="{{ Route::is('frontend.challenges') ? 'font-bold text-white' : 'text-white/70 hover:text-white' }}">
-                {{ __('Challenges Solved') }}
+            <a href="{{ route('frontend.export') }}"
+               class="{{ Route::is('frontend.export') ? 'font-bold text-white' : 'text-white/70 hover:text-white' }}">
+                {{ __('Export Requests') }}
+            </a>
+            <a href="{{ route('frontend.catalog') }}"
+               class="{{ Route::is('frontend.catalog') ? 'font-bold text-white' : 'text-white/70 hover:text-white' }}">
+                {{ __('Catalog') }}
             </a>
         </nav>
 

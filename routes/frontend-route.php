@@ -26,8 +26,6 @@ Route::group([
     Route::get('/events', function () { return trans('incomplete page') ; })->name('events');
     Route::get('/events/{event-slug}', function () { return trans('incomplete page') ; })->name('events.show');
 
-    Route::get('/articles', function () { return trans('Incomplete page') ; })->name('articles');
-    Route::get('/articles/{article-slug}', function () { return trans('incomplete page') ; })->name('articles.show');
 
     Route::get('/challenges', 'WebsiteController@challenges')->name('challenges');
     Route::get('/challenges/{id}','WebsiteController@challenge')->name('challenges.show');
@@ -39,9 +37,11 @@ Route::group([
     Route::get('/contact', 'WebsiteController@Contact')->name('contact'); //ok
     Route::get('/products', 'WebsiteController@products')->name('products');//ok
     Route::get('/product/{product:slug}', 'WebsiteController@product')->name('product');//ok
+    Route::get('/news', 'WebsiteController@news')->name('news'); //ok
+    Route::get('/news-post/{Article:slug}', 'WebsiteController@newsPost')->name('news-post'); //ok
 
 
-    Route::get('/news', 'WebsiteController@news')->name('news');
+
     Route::get('/export-requests', 'WebsiteController@exportRequests')->name('export.requests');
     Route::get('/catalog', 'WebsiteController@catalog')->name('catalog');
     Route::get('/faq', 'WebsiteController@faq')->name('faq');
