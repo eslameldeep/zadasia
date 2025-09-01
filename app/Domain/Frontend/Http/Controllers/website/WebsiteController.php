@@ -13,6 +13,7 @@ use App\Domain\Frontend\Models\Review;
 use App\Domain\Frontend\Models\Software;
 use App\Http\Controllers\Controller;
 use Artesaos\SEOTools\Facades\SEOMeta;
+    use Illuminate\Support\Facades\Validator;
 
 class WebsiteController extends Controller
 {
@@ -48,6 +49,42 @@ class WebsiteController extends Controller
 
     }
 
+
+    function Products()
+    {
+        SEOMeta::setTitle(trans('Products'));
+
+        // Validate category slug if present
+        $validated = Validator::make(request()->all(), [
+            'category' => ['nullable', 'string'],
+        ])->validate();
+
+        $categorySlug = $validated['category'] ?? null;
+        $category = null;
+
+        $productsQuery = Product::where('status', true)
+            ->with('media')
+            ->orderBy('sort');
+
+        if ($categorySlug) {
+            $category = Category::where('slug','like', "%$categorySlug%")->first();
+            if ($category) {
+                $productsQuery->where('category_id', $category->id);
+            }
+        }
+
+        return view('frontend.products', [
+            'Products'   => $productsQuery->paginate(3),
+            'Categories' => Category::where('status', true)->orderBy('sort')->get(),
+            'Category'   => $category,
+        ]);
+    }
+
+
+
+
+    //ok above
+
     function Fields() {
         SEOMeta::setTitle(trans('Fields'));
         return view('frontend.fields', [
@@ -70,12 +107,6 @@ class WebsiteController extends Controller
         ]);
     }
 
-    function Products() {
-        SEOMeta::setTitle(trans('Products'));
-        return view('frontend.products', [
-            'Products' => Product::where('status' , true)->with('media')->orderBy('sort')->get(),
-        ]);
-    }
 
     function Product($product_slug) {
         $Product = Product::where('slug', 'like' , "%$product_slug%" )

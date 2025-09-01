@@ -37,8 +37,9 @@ Route::group([
     Route::get('/about', 'WebsiteController@about')->name('about'); //ok
     Route::get('/export-request', 'WebsiteController@ExportRequests')->name('export'); //ok
     Route::get('/contact', 'WebsiteController@Contact')->name('contact'); //ok
+    Route::get('/products', 'WebsiteController@products')->name('products');//ok
+    Route::get('/product/{product:slug}', 'WebsiteController@product')->name('product');//ok
 
-    Route::get('/products', 'WebsiteController@products')->name('products');
 
     Route::get('/news', 'WebsiteController@news')->name('news');
     Route::get('/export-requests', 'WebsiteController@exportRequests')->name('export.requests');
