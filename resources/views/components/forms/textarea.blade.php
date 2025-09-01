@@ -55,12 +55,14 @@
 @if ($type == 'tinymce')
     @push('js')
 
-        <script src="https://cdn.tiny.cloud/1/4rt2w3643n10azzv64r6z8zi1abn2r5xmprrcdijz6v8346b/tinymce/8/tinymce.min.js" referrerpolicy="origin" ></script>
+
+        <script src="https://cdn.tiny.cloud/1/4rt2w3643n10azzv64r6z8zi1abn2r5xmprrcdijz6v8346b/tinymce/8/tinymce.min.js" referrerpolicy="origin"></script>
+
         {{-- <script src="{{ asset('dashboard-assets/library/tinymce/js/tinymce/tinymce.min.js') }}" referrerpolicy="origin"> --}}
 
         <script>
-            var example_image_upload_handler = (blobInfo, progress) => new Promise((resolve, reject) => {
 
+            var example_image_upload_handler = (blobInfo, progress) => new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
                 let csrfToken = document.querySelector('meta[name="csrf-token"]').content;
 
@@ -73,7 +75,6 @@
                 };
 
                 xhr.onload = () => {
-
                     if (xhr.status === 403) {
                         reject({ message: 'HTTP Error: ' + xhr.status, remove: true });
                         return;
@@ -86,12 +87,12 @@
 
                     const json = JSON.parse(xhr.responseText);
 
-                    if (!json || typeof json.data.full_url !== 'string') {
+                    if (!json || typeof json.data.url !== 'string') {
                         reject('Invalid JSON: ' + xhr.responseText);
                         return;
                     }
 
-                    resolve(json.data.full_url);
+                    resolve(json.data.url);
                 };
 
                 xhr.onerror = () => {
@@ -103,6 +104,7 @@
 
                 xhr.send(formData);
             });
+
 
             function file_upload_file_handler(cb, value, meta) {
                 const input = document.createElement('input');

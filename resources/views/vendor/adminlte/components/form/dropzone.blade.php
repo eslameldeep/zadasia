@@ -117,7 +117,7 @@
             acceptedFiles: "{{ $types }}", // Specify accepted file types
             dictDefaultMessage: "{{ __('Drop files here or click to upload') }}", // Default message
             dictFileTooBig: "{{ __('File is too big ). Max file size: :maxFileSizeMb  MB.', ['maxFileSizeMb' => $maxFileSizeMb]) }}", // File size error message
-            dictInvalidFileType: "{{ __('Invalid file type. Only :types files are allowed.', ['types' => $types]) }}", // File type error message 
+            dictInvalidFileType: "{{ __('Invalid file type. Only :types files are allowed.', ['types' => $types]) }}", // File type error message
             dictFallbackMessage: "{{ __('Your browser does not support drag & drop file uploads.') }}", // Fallback message for older browsers
             dictFallbackText: "{{ __('Please use the fallback form below to upload your files.') }}", // Fallback text for older browsers
             addRemoveLinks: false, // Add remove file links
@@ -126,26 +126,26 @@
 
                 @foreach ($mediaFiles ?? [] as $key => $file)
 
-                    var mockFile = {
-                        name: "{{ $file->file_name }}",
-                        size: {{ $file->size }},
-                        id: {{ $file->id }},
-                        viewLink: "{{ $file->getUrl() }}",
-                    };
-                    this.files[{{ $key }}] = "{{ $file->file_name }}";
-                    this.options.addedfile.call(this, mockFile);
-                    this.options.thumbnail.call(this, mockFile, "{{ $file->getUrl() }}");
-                    mockFile.previewElement.classList.add('dz-success');
-                    mockFile.previewElement.classList.add('dz-complete');
-                    var viewButton = Dropzone.createElement(
-                        '<div class="preview"><img src="{{ asset('dashboard-assets/images/file-earmark-image.svg') }}"/></div>'
-                        );
-                    mockFile.previewElement.appendChild(viewButton);
+                var mockFile = {
+                    name: "{{ $file->file_name }}",
+                    size: {{ $file->size }},
+                    id: {{ $file->id }},
+                    viewLink: "{{ $file->getUrl() }}",
+                };
+                this.files[{{ $key }}] = "{{ $file->file_name }}";
+                this.options.addedfile.call(this, mockFile);
+                this.options.thumbnail.call(this, mockFile, "{{ $file->getUrl() }}");
+                mockFile.previewElement.classList.add('dz-success');
+                mockFile.previewElement.classList.add('dz-complete');
+                var viewButton = Dropzone.createElement(
+                    '<div class="preview"><img src="{{ asset('dashboard-assets/images/file-earmark-image.svg') }}"/></div>'
+                );
+                mockFile.previewElement.appendChild(viewButton);
 
-                    // Listen to the view button click event
-                    viewButton.addEventListener("click", function(e) {
-                        window.open(mockFile.viewLink, '_blank');
-                    });
+                // Listen to the view button click event
+                viewButton.addEventListener("click", function(e) {
+                    window.open(mockFile.viewLink, '_blank');
+                });
                 @endforeach
 
                 // Add event listeners for different Dropzone events

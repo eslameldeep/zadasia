@@ -38,6 +38,7 @@ class FileResource extends JsonResource
             return [
                 'id' => $this->id,
                 'url' => $this->original_url,
+                'location' => $this->original_url ,
                 'webp' => $this->getUrl(),
                 "name" => $this->name,
                 "mime_type" => $this->mime_type,
@@ -48,6 +49,7 @@ class FileResource extends JsonResource
             return [
                 'id' => $this->id,
                 'url' => $this->original_url,
+                'location' => $this->original_url ,
                 "name" => $this->name,
                 "mime_type" => $this->mime_type,
                 "size" =>  $this->formatSizeUnits($this->size),
