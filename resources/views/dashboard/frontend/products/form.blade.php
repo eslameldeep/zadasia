@@ -2,7 +2,7 @@
 
     <x-forms.input name="name" label="name" icon="fas fa-pen-nib" malti_lang="false" required/>
     <x-forms.input name="slug" label="slug" icon="fas fa-pen-nib" malti_lang="false" required/>
-    <x-forms.textarea name="short_description" label="product description" rows=10 icon="fa-file-alt" malti_lang/>
+    <x-forms.textarea name="short_description" label="product description" type="tinymce" rows=10 icon="fa-file-alt" malti_lang/>
     <x-forms.textarea name="description" label="page description"  type="tinymce" rows=30 icon="fa-file-alt" malti_lang/>
     <x-forms.select name="category_id" label="category" :options="$categories" :selected="$model?->category?->id" />
     <x-forms.active-switch name="status" label="status" icon="fa-file-alt"/>
