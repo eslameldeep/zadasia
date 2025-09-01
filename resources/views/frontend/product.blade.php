@@ -74,12 +74,93 @@
                 <!-- CTA Button -->
                 <button
                     class="px-6 py-3 bg-[#126B65] text-white rounded-full font-semibold hover:bg-[#0E5550] transition w-full">
-                    اطلب المنتج
+                    <i class="fa-brands fa-whatsapp"> </i>@lang("Request Via WhatsApp")
                 </button>
             </div>
 
 
         </div>
+    </section>
+
+
+    <section class="py-32 bg-[#F5FAFA] relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 py-4 space-y-5 z-10 relative">
+            {!! $Product->description !!}
+        </div>
+    </section>
+
+
+    <section id="products" class="py-32 bg-[#F5FAFA] relative overflow-hidden">
+
+        <!-- Background -->
+        <div>
+            <div class="max-w-7xl mx-auto px-4 py-4 space-y-5 z-10 relative">
+
+                <!-- Headings -->
+                <div class="text-center text-lg text-teal-600 font-bold">
+                    @lang('New Arrived Products')
+                </div>
+                <div class="text-center">
+                    <span class="text-6xl  text-black font-bold">@lang('High Quality')</span>
+                    <span class="text-6xl text-teal-600 font-bold">@lang('For Every New')</span>
+                </div>
+
+                <!-- Slider -->
+                <div class="slider relative">
+                    <div class="swiper products-swiper relative">
+                        <div class="swiper-wrapper mt-20">
+                            @foreach($Products as $product)
+                                <a href="{{route('frontend.product' , $product->slug )}}"
+                                   class="swiper-slide flex flex-col items-center text-teal-600 hover:text-black">
+
+                                    <!-- Card -->
+                                    <div class="product-image aspect-[1/1] w-full bg-gray-100 border border-[#126B6538] rounded-[20px]
+                                    hover:bg-white/10 hover:border-[3px] hover:border-[#126B65]
+                                    transition-all duration-300 bg-center bg-no-repeat bg-cover"
+                                         style="background-image: url('{{ $product->getFirstMediaUrl('image') }}');">
+                                    </div>
+
+                                    <!-- Title -->
+                                    <div class="mt-3 text-center text-2xl">
+                                        {{ $product->name }}
+                                    </div>
+
+                                    <!-- Price (Optional) -->
+                                    @if($product->price)
+                                        <div class="text-center text-lg text-gray-400 mt-1">
+                                            {{ $product->price }} $
+                                        </div>
+                                    @endif
+
+                                </a>
+                            @endforeach
+                        </div>
+                    </div>
+
+                    <!-- Prev Button -->
+                    <!-- Prev Button -->
+                    <button
+                        class="products-prev absolute top-1/2 -translate-y-1/2 left-2 xl:-left-16 z-10
+    flex items-center justify-center w-[50px] h-[50px] rounded-full
+    border border-[#126B65] bg-white text-[#126B65]
+    hover:bg-[#126B65] hover:text-white transition">
+                        <i class="fa-solid fa-arrow-left text-lg"></i>
+                    </button>
+
+                    <!-- Next Button -->
+                    <button
+                        class="products-next absolute top-1/2 -translate-y-1/2 right-2 xl:-right-16 z-10
+    flex items-center justify-center w-[50px] h-[50px] rounded-full
+    border border-[#126B65] bg-white text-[#126B65]
+    hover:bg-[#126B65] hover:text-white transition">
+                        <i class="fa-solid fa-arrow-right text-lg"></i>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+
+
     </section>
 
 

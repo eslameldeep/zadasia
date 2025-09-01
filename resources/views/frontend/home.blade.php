@@ -70,8 +70,10 @@
 
     <section class="py-32  relative overflow-hidden">
         <div>
-            <div class=" absolute bg-[url('frontend-assets/images/bg-icon.svg')] bg-no-repeat bg-right  -right-72 inset-0 "></div>
-            <div class=" absolute bg-[url('frontend-assets/images/bg-icon.svg')] bg-no-repeat bg-left-bottom -bottom-56 -left-56 inset-0 "></div>
+            <div
+                class=" absolute bg-[url('frontend-assets/images/bg-icon.svg')] bg-no-repeat bg-right  -right-72 inset-0 "></div>
+            <div
+                class=" absolute bg-[url('frontend-assets/images/bg-icon.svg')] bg-no-repeat bg-left-bottom -bottom-56 -left-56 inset-0 "></div>
 
             <div class="max-w-7xl mx-auto px-4 py-4">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 items-center">
@@ -106,7 +108,10 @@
                                 <!-- Card 1 -->
                                 <div
                                     class="rounded-2xl border border-green-700 p-6 hover:border-gray-400 hover:bg-gray-200 transition">
-                                    <h3 class="font-bold text-lg mb-2 flex align-baseline gap-x-2"><img class="h-6" src="frontend-assets/images/vision.png" alt="vision" />Vision</h3>
+                                    <h3 class="font-bold text-lg mb-2 flex align-baseline gap-x-2"><img class="h-6"
+                                                                                                        src="frontend-assets/images/vision.png"
+                                                                                                        alt="vision"/>Vision
+                                    </h3>
                                     <p class="text-gray-700">
                                         aksndkjasn ajkndkjas n ajknsdkjasnd askjn dkan sd
                                     </p>
@@ -115,7 +120,10 @@
                                 <!-- Card 2 -->
                                 <div
                                     class="rounded-2xl border border-green-700 p-6 hover:border-gray-400 hover:bg-gray-200 transition ">
-                                    <h3 class="font-bold text-lg mb-2 flex align-baseline gap-x-2"><img class="h-6" src="frontend-assets/images/mission.png" alt="mission" />Mission</h3>
+                                    <h3 class="font-bold text-lg mb-2 flex align-baseline gap-x-2"><img class="h-6"
+                                                                                                        src="frontend-assets/images/mission.png"
+                                                                                                        alt="mission"/>Mission
+                                    </h3>
 
                                     <p class="text-gray-700">
                                         aksndkjasn ajkndkjas n ajknsdkjasnd askjn dkan sd
@@ -136,7 +144,6 @@
     <section id="category" class="py-32  bg-[#0b2f34] relative overflow-hidden ">
 
 
-
         <div class="bg-[url('frontend-assets/images/bg-icon.svg')] bg-no-repeat bg-[135%_0%]">
 
             <div class="max-w-7xl mx-auto px-4 py-4 space-y-5 z-10">
@@ -147,46 +154,44 @@
                 </div>
 
                 <div class="slider relative">
-                <div class="swiper categories-swiper relative">
-                    <div class="swiper-wrapper mt-20">
-                        @foreach($Categories as $category)
-                            <div class="swiper-slide flex flex-col items-center text-teal-600 hover:text-white">
+                    <div class="swiper categories-swiper relative">
+                        <div class="swiper-wrapper mt-20">
+                            @foreach($Categories as $category)
+                                <a href="{{ route('frontend.products', ['category' => $category->slug]) }}" class="swiper-slide flex flex-col items-center text-teal-600 hover:text-white">
 
-                                <!-- Card -->
-                                <div class=" category-image aspect-[1/1] w-full bg-[#0F3439] border border-[#126B6538] rounded-[20px]
-                    hover:bg-white/10 hover:border-[3px] hover:border-[#126B65]
-                    transition-all duration-300 bg-center bg-no-repeat bg-cover"
-                                     style="background-image: url('{{ $category->getFirstMediaUrl('image') }}');">
-                                </div>
 
-                                <!-- Title -->
-                                <div class="mt-3 text-center  text-2xl">
-                                    {{ $category->name }}
-                                </div>
+                                        <!-- Card -->
+                                        <div class=" category-image aspect-[1/1] w-full bg-[#0F3439] border border-[#126B6538] rounded-[20px] hover:bg-white/10 hover:border-[3px] hover:border-[#126B65] transition-all duration-300 bg-center bg-no-repeat bg-cover" style="background-image: url('{{ $category->getFirstMediaUrl('image') }}');"> </div>
 
-                            </div>
-                        @endforeach
+                                        <!-- Title -->
+                                        <div class="mt-3 text-center  text-2xl">
+                                            {{ $category->name }}
+                                        </div>
+
+
+                                </a>
+                            @endforeach
+                        </div>
+
                     </div>
+                    <!-- Prev Button -->
+                    <button
+                        class="categories-prev absolute top-1/2 -translate-y-1/2 left-2 xl:-left-16  z-10
+                 flex items-center justify-center w-[50px] h-[50px] rounded-full
+               border border-[#126B65] bg-[#0F3439] text-[#81a5ac]
+               hover:bg-[#126B65] hover:text-white transition">
+                        <i class="fa-solid fa-arrow-left text-lg"></i>
+                    </button>
 
+                    <!-- Next Button -->
+                    <button
+                        class="categories-next absolute top-1/2 -translate-y-1/2 right-2 xl:-right-16  z-10
+                 flex items-center justify-center w-[50px] h-[50px] rounded-full
+               border border-[#126B65] bg-[#0F3439] text-[#81a5ac]
+               hover:bg-[#126B65] hover:text-white transition">
+                        <i class="fa-solid fa-arrow-right text-lg"></i>
+                    </button>
                 </div>
-                <!-- Prev Button -->
-                <button
-                    class="categories-prev absolute top-1/2 -translate-y-1/2 left-2 xl:-left-16  z-10
-                 flex items-center justify-center w-[50px] h-[50px] rounded-full
-               border border-[#126B65] bg-[#0F3439] text-[#81a5ac]
-               hover:bg-[#126B65] hover:text-white transition">
-                    <i class="fa-solid fa-arrow-left text-lg"></i>
-                </button>
-
-                <!-- Next Button -->
-                <button
-                    class="categories-next absolute top-1/2 -translate-y-1/2 right-2 xl:-right-16  z-10
-                 flex items-center justify-center w-[50px] h-[50px] rounded-full
-               border border-[#126B65] bg-[#0F3439] text-[#81a5ac]
-               hover:bg-[#126B65] hover:text-white transition">
-                    <i class="fa-solid fa-arrow-right text-lg"></i>
-                </button>
-            </div>
 
             </div>
         </div>
@@ -201,7 +206,6 @@
         ">
         </div>
     </section>
-
 
 
     <section id="products" class="py-32 bg-white relative overflow-hidden">
@@ -224,7 +228,7 @@
                     <div class="swiper products-swiper relative">
                         <div class="swiper-wrapper mt-20">
                             @foreach($Products as $product)
-                                <div class="swiper-slide flex flex-col items-center text-teal-600 hover:text-black">
+                                <a href="{{route('frontend.product' , $product->slug )}}" class="swiper-slide flex flex-col items-center text-teal-600 hover:text-black">
 
                                     <!-- Card -->
                                     <div class="product-image aspect-[1/1] w-full bg-gray-100 border border-[#126B6538] rounded-[20px]
@@ -245,7 +249,7 @@
                                         </div>
                                     @endif
 
-                                </div>
+                                </a>
                             @endforeach
                         </div>
                     </div>
@@ -308,8 +312,6 @@
     </section>
 
 
-
-
     <section class="relative py-20 bg-[#0b2f34] text-white">
         <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
@@ -353,7 +355,8 @@
                 <div class="swiper-wrapper">
                     @foreach($Reviews as $review)
                         <div class="swiper-slide">
-                            <div class="bg-[#EDF9F8]  text-[#4d686c] rounded-[20px] p-8 group max-w-md mx-auto text-center">
+                            <div
+                                class="bg-[#EDF9F8]  text-[#4d686c] rounded-[20px] p-8 group max-w-md mx-auto text-center">
 
                                 <!-- Stars -->
                                 <div class="flex justify-start mb-3">
@@ -361,7 +364,8 @@
                                         @if($i <= $review->stars)
                                             <svg class="w-5 h-5  fill-current mx-0.5"
                                                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                                <path
+                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
                                             </svg>
                                         @else
                                             <svg class="w-5 h-5  mx-0.5"
@@ -385,7 +389,7 @@
                                     <div class="flex justify-center  items-center ">
                                         <img src="{{ $review->getFirstMediaUrl('image') }}"
                                              alt="{{ $review->client_name }}"
-                                             class="w-14 h-14 rounded-full object-cover " />
+                                             class="w-14 h-14 rounded-full object-cover "/>
                                     </div>
 
                                     <div class="text-start">
@@ -419,9 +423,9 @@
 
             {{-- Left Column (30%) --}}
             <div class="xl:col-span-5 text-center xl:text-start text-[#0B2F34] space-y-4">
-                    <span class="text-sm text-teal-600 font-bold">@lang("Contact Us")</span>
+                <span class="text-sm text-teal-600 font-bold">@lang("Contact Us")</span>
                 <div class="mx-5">
-                    <span class="text-7xl  text-black font-bold">@lang("Contact Us")</span><br />
+                    <span class="text-7xl  text-black font-bold">@lang("Contact Us")</span><br/>
                     <span class="text-7xl text-teal-600 font-bold">@lang("and do not hesitate")</span>
 
                 </div>
@@ -432,7 +436,8 @@
                 <div class="bg-white rounded-2xl shadow-[0px_3px_35px_rgba(18,107,101,0.07)] p-8">
 
                     <h3 class="text-xl font-semibold text-[#0b2f34] text-start">@lang('Please fill out the form ...')</h3>
-                    <div class="text-sm  mb-6 text-start text-[#0b2f34]">@lang('Fill in the following information and we will respond to you as soon as possible.')</div>
+                    <div
+                        class="text-sm  mb-6 text-start text-[#0b2f34]">@lang('Fill in the following information and we will respond to you as soon as possible.')</div>
 
                     <form action="" method="POST" class="space-y-6">
                         @csrf
