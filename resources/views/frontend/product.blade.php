@@ -66,7 +66,7 @@
                 </p>
                 <!-- Short Description -->
                 <ul class="space-y-2 text-gray-700 text-sm">
-                    {{ $Product->short_description }}
+                    {!! $Product->short_description  !!}
 
                 </ul>
 
